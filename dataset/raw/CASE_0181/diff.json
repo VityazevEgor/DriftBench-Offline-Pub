@@ -1,0 +1,14 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/ingress/0",
+    "old": {
+      "ports": [
+        {
+          "port": 6379
+        }
+      ]
+    },
+    "new": null
+  }
+]

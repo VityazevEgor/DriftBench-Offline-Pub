@@ -1,0 +1,39 @@
+{
+  "case_id": "CASE_0131",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "rabbitmq",
+  "chart": "bitnami/rabbitmq",
+  "chart_version": "16.0.14",
+  "resource_kind": "RoleBinding",
+  "resource_name": "rabbitmq-prod-endpoint-reader",
+  "namespace": "rabbitmq-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-RBAC-SUBJECT-ADD",
+    "MUT-META-LABEL-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "default_sa",
+      "index": 1,
+      "subject": {
+        "kind": "ServiceAccount",
+        "name": "default",
+        "namespace": "rabbitmq-prod"
+      }
+    },
+    {
+      "param": "pipeline.run/id",
+      "key": "pipeline.run/id",
+      "value": "pipe-8242"
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

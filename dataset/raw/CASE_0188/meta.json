@@ -1,0 +1,28 @@
+{
+  "case_id": "CASE_0188",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "nginx",
+  "chart": "bitnami/nginx",
+  "chart_version": "25.2.5",
+  "resource_kind": "Ingress",
+  "resource_name": "nginx-prod",
+  "namespace": "nginx-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-ING-HOST"
+  ],
+  "operator_params": [
+    {
+      "param": "modify_host",
+      "host": "api.nginx.local"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

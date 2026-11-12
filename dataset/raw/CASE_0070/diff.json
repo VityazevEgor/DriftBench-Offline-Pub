@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/metadata/labels/app.kubernetes.io~1version",
+    "old": "18.6.0",
+    "new": "18.6.1"
+  },
+  {
+    "op": "replace",
+    "path": "/data/postgres-password",
+    "old": "cG9zdGdyZXMtcGFzc3dvcmQtMTIz",
+    "new": "U3VwM3JLOHNBZG0xbiM5OQ=="
+  }
+]

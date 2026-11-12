@@ -1,0 +1,18 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/ingress/1",
+    "old": null,
+    "new": {
+      "from": [
+        {
+          "podSelector": {
+            "matchLabels": {
+              "app.kubernetes.io/name": "api-gateway"
+            }
+          }
+        }
+      ]
+    }
+  }
+]

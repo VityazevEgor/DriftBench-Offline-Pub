@@ -1,0 +1,22 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/metadata/annotations",
+    "old": null,
+    "new": {
+      "sidecar.istio.io/inject": "true"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/automountServiceAccountToken",
+    "old": true,
+    "new": false
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/securityContext/runAsUser",
+    "old": null,
+    "new": 0
+  }
+]

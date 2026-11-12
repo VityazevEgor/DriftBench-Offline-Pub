@@ -1,0 +1,32 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/owner",
+    "old": null,
+    "new": "team-platform"
+  },
+  {
+    "op": "remove",
+    "path": "/spec/ingress/0",
+    "old": {
+      "ports": [
+        {
+          "port": 4369
+        },
+        {
+          "port": 5672
+        },
+        {
+          "port": 5671
+        },
+        {
+          "port": 25672
+        },
+        {
+          "port": 15672
+        }
+      ]
+    },
+    "new": null
+  }
+]

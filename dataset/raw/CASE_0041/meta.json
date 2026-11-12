@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0041",
+  "case_type": "paired",
+  "pair_id": "PAIR_018",
+  "app": "rabbitmq",
+  "chart": "bitnami/rabbitmq",
+  "chart_version": "16.0.14",
+  "resource_kind": "StatefulSet",
+  "resource_name": "rabbitmq-dev",
+  "namespace": "rabbitmq-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-SC-CAPS-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "NET_BIND_SERVICE",
+      "container": "rabbitmq",
+      "capability": "NET_BIND_SERVICE"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

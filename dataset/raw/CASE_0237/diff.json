@@ -1,0 +1,13 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/capabilities/add",
+    "old": [
+      "NET_BIND_SERVICE"
+    ],
+    "new": [
+      "NET_BIND_SERVICE",
+      "SYS_ADMIN"
+    ]
+  }
+]

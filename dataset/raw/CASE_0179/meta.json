@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0179",
+  "case_type": "paired",
+  "pair_id": "PAIR_038",
+  "app": "prometheus-node-exporter",
+  "chart": "prometheus-community/prometheus-node-exporter",
+  "chart_version": "4.60.0",
+  "resource_kind": "ServiceAccount",
+  "resource_name": "prometheus-node-exporter-dev",
+  "namespace": "prometheus-node-exporter-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-META-LABEL-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "owner",
+      "key": "owner",
+      "value": "team-alpha"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

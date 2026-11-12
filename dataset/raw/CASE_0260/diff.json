@@ -1,0 +1,20 @@
+[
+  {
+    "op": "add",
+    "path": "/rules/10",
+    "old": null,
+    "new": {
+      "apiGroups": [
+        ""
+      ],
+      "resources": [
+        "secrets"
+      ],
+      "verbs": [
+        "get",
+        "list",
+        "watch"
+      ]
+    }
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "case_id": "CASE_0292",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "rabbitmq",
+  "chart": "bitnami/rabbitmq",
+  "chart_version": "16.0.14",
+  "resource_kind": "NetworkPolicy",
+  "resource_name": "rabbitmq-dev",
+  "namespace": "rabbitmq-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-NP-RULE-REMOVE",
+    "MUT-META-LABEL-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "direction": "ingress",
+      "index": 0
+    },
+    {
+      "param": "owner",
+      "key": "owner",
+      "value": "team-platform"
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/tolerations",
+    "old": null,
+    "new": [
+      {
+        "operator": "Exists",
+        "effect": "NoSchedule"
+      }
+    ]
+  }
+]

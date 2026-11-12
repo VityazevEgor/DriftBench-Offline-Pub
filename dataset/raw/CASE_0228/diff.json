@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/annotations",
+    "old": null,
+    "new": {
+      "prometheus.io/scrape": "true"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/data/postgres-password",
+    "old": "cG9zdGdyZXMtcGFzc3dvcmQtMTIz",
+    "new": "U3VwM3JLOHNBZG0xbiM5OQ=="
+  }
+]

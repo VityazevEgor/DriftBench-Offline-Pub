@@ -1,0 +1,16 @@
+[
+  {
+    "op": "remove",
+    "path": "/metadata/annotations",
+    "old": {
+      "prometheus.io/scrape": "true"
+    },
+    "new": null
+  },
+  {
+    "op": "replace",
+    "path": "/spec/type",
+    "old": "ClusterIP",
+    "new": "LoadBalancer"
+  }
+]

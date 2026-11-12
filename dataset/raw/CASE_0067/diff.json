@@ -1,0 +1,18 @@
+[
+  {
+    "op": "remove",
+    "path": "/rules/1",
+    "old": {
+      "apiGroups": [
+        ""
+      ],
+      "resources": [
+        "events"
+      ],
+      "verbs": [
+        "create"
+      ]
+    },
+    "new": null
+  }
+]

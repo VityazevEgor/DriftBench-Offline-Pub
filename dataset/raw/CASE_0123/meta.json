@@ -1,0 +1,39 @@
+{
+  "case_id": "CASE_0123",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "ingress-nginx",
+  "chart": "ingress-nginx/ingress-nginx",
+  "chart_version": "4.15.1",
+  "resource_kind": "ClusterRoleBinding",
+  "resource_name": "ingress-nginx-prod",
+  "namespace": "ingress-nginx-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-META-ANNOT-ADD",
+    "MUT-RBAC-SUBJECT-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "backup.velero.io/backup-volumes",
+      "key": "backup.velero.io/backup-volumes",
+      "value": "data"
+    },
+    {
+      "param": "default_sa",
+      "index": 1,
+      "subject": {
+        "kind": "ServiceAccount",
+        "name": "default",
+        "namespace": "default"
+      }
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

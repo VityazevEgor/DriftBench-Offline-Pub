@@ -1,0 +1,128 @@
+from driftbench.operators.base import BaseOperator
+from driftbench.operators.metadata import (
+    MutMetaLabelAdd,
+    MutMetaLabelChange,
+    MutMetaAnnotAdd,
+    MutMetaAnnotRemove,
+    MutMetaPodAnnotAdd,
+)
+from driftbench.operators.workload import (
+    MutWlReplicas,
+    MutWlImage,
+    MutWlPullPolicy,
+    MutWlProbeRemove,
+    MutWlProbeModify,
+    MutWlStrategy,
+    MutWlScheduling,
+)
+from driftbench.operators.resources import (
+    MutResLimits,
+    MutResRequests,
+    MutResRemove,
+)
+from driftbench.operators.config import (
+    MutCfgEnvChange,
+    MutCfgEnvAdd,
+    MutCfgEnvRemove,
+    MutCfgSecretRefChange,
+    MutCfgCmChange,
+    MutCfgCmAdd,
+    MutCfgSecretChange,
+)
+from driftbench.operators.security_context import (
+    MutScPrivileged,
+    MutScAllowEsc,
+    MutScRunAsRoot,
+    MutScCapsAdd,
+    MutScCapsDropAll,
+    MutScReadonlyRoot,
+    MutScNonRoot,
+    MutScRemove,
+)
+from driftbench.operators.pod_spec import (
+    MutPodHostNs,
+    MutPodHostPath,
+    MutPodHostPort,
+    MutPodSaChange,
+    MutPodAutomount,
+)
+from driftbench.operators.network import (
+    MutSvcPort,
+    MutSvcType,
+    MutSvcSelector,
+    MutIngHost,
+    MutIngPath,
+    MutIngAnnot,
+    MutNpAllowAll,
+    MutNpRuleRemove,
+    MutNpRuleAdd,
+)
+from driftbench.operators.rbac import (
+    MutRbacVerbWildcard,
+    MutRbacResWildcard,
+    MutRbacAddRule,
+    MutRbacRuleRemove,
+    MutRbacSubjectAdd,
+    MutRbacRoleRefAdmin,
+)
+from driftbench.operators.scaling import (
+    MutScaleHpa,
+    MutScalePdb,
+)
+
+
+def get_all_operators() -> list[BaseOperator]:
+    return [
+        MutMetaLabelAdd(),
+        MutMetaLabelChange(),
+        MutMetaAnnotAdd(),
+        MutMetaAnnotRemove(),
+        MutMetaPodAnnotAdd(),
+        MutWlReplicas(),
+        MutWlImage(),
+        MutWlPullPolicy(),
+        MutWlProbeRemove(),
+        MutWlProbeModify(),
+        MutWlStrategy(),
+        MutWlScheduling(),
+        MutResLimits(),
+        MutResRequests(),
+        MutResRemove(),
+        MutCfgEnvChange(),
+        MutCfgEnvAdd(),
+        MutCfgEnvRemove(),
+        MutCfgSecretRefChange(),
+        MutCfgCmChange(),
+        MutCfgCmAdd(),
+        MutCfgSecretChange(),
+        MutScPrivileged(),
+        MutScAllowEsc(),
+        MutScRunAsRoot(),
+        MutScCapsAdd(),
+        MutScCapsDropAll(),
+        MutScReadonlyRoot(),
+        MutScNonRoot(),
+        MutScRemove(),
+        MutPodHostNs(),
+        MutPodHostPath(),
+        MutPodHostPort(),
+        MutPodSaChange(),
+        MutPodAutomount(),
+        MutSvcPort(),
+        MutSvcType(),
+        MutSvcSelector(),
+        MutIngHost(),
+        MutIngPath(),
+        MutIngAnnot(),
+        MutNpAllowAll(),
+        MutNpRuleRemove(),
+        MutNpRuleAdd(),
+        MutRbacVerbWildcard(),
+        MutRbacResWildcard(),
+        MutRbacAddRule(),
+        MutRbacRuleRemove(),
+        MutRbacSubjectAdd(),
+        MutRbacRoleRefAdmin(),
+        MutScaleHpa(),
+        MutScalePdb(),
+    ]

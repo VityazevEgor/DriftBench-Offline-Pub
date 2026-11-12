@@ -1,0 +1,10 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/annotations",
+    "old": null,
+    "new": {
+      "deployment.timestamp": "2026-10-26T10:00:00Z"
+    }
+  }
+]

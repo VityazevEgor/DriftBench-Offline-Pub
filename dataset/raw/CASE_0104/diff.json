@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/resources/limits/cpu",
+    "old": "150m",
+    "new": "600m"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/resources/limits/memory",
+    "old": "192Mi",
+    "new": "768Mi"
+  }
+]

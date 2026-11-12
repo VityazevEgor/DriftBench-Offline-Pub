@@ -1,0 +1,28 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/affinity",
+    "old": {
+      "podAffinity": null,
+      "podAntiAffinity": {
+        "preferredDuringSchedulingIgnoredDuringExecution": [
+          {
+            "podAffinityTerm": {
+              "labelSelector": {
+                "matchLabels": {
+                  "app.kubernetes.io/instance": "redis-dev",
+                  "app.kubernetes.io/name": "redis",
+                  "app.kubernetes.io/component": "master"
+                }
+              },
+              "topologyKey": "kubernetes.io/hostname"
+            },
+            "weight": 1
+          }
+        ]
+      },
+      "nodeAffinity": null
+    },
+    "new": null
+  }
+]

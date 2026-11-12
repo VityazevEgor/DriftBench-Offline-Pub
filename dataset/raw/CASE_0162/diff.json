@@ -1,0 +1,27 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/affinity",
+    "old": {
+      "podAffinity": null,
+      "podAntiAffinity": {
+        "preferredDuringSchedulingIgnoredDuringExecution": [
+          {
+            "podAffinityTerm": {
+              "labelSelector": {
+                "matchLabels": {
+                  "app.kubernetes.io/instance": "nginx-dev",
+                  "app.kubernetes.io/name": "nginx"
+                }
+              },
+              "topologyKey": "kubernetes.io/hostname"
+            },
+            "weight": 1
+          }
+        ]
+      },
+      "nodeAffinity": null
+    },
+    "new": null
+  }
+]

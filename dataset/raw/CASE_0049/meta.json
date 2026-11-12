@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0049",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "redis",
+  "chart": "bitnami/redis",
+  "chart_version": "28.3.1",
+  "resource_kind": "StatefulSet",
+  "resource_name": "redis-prod-replicas",
+  "namespace": "redis-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-POD-HOSTPATH"
+  ],
+  "operator_params": [
+    {
+      "param": "/tmp/cache",
+      "container": "redis",
+      "mountPath": "/mnt/host-tmp-cache"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

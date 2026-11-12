@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/minAvailable",
+    "old": 1,
+    "new": 0
+  }
+]

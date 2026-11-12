@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/maxUnavailable",
+    "old": 1,
+    "new": "100%"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0092",
+  "case_type": "paired",
+  "pair_id": "PAIR_028",
+  "app": "nginx",
+  "chart": "bitnami/nginx",
+  "chart_version": "25.2.5",
+  "resource_kind": "ServiceAccount",
+  "resource_name": "nginx-dev",
+  "namespace": "nginx-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-META-ANNOT-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "deployment.timestamp",
+      "key": "deployment.timestamp",
+      "value": "2026-10-26T10:00:00Z"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

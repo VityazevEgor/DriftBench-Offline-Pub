@@ -1,0 +1,26 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/jobTemplate/spec/template/spec/containers/0/resources/limits/cpu",
+    "old": "150m",
+    "new": "37m"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/jobTemplate/spec/template/spec/containers/0/resources/limits/memory",
+    "old": "192Mi",
+    "new": "48Mi"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/jobTemplate/spec/template/spec/containers/0/resources/requests/cpu",
+    "old": "100m",
+    "new": "37m"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/jobTemplate/spec/template/spec/containers/0/resources/requests/memory",
+    "old": "128Mi",
+    "new": "48Mi"
+  }
+]

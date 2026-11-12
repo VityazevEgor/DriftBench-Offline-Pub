@@ -1,0 +1,24 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/containers/0/securityContext",
+    "old": {
+      "allowPrivilegeEscalation": false,
+      "capabilities": {
+        "drop": [
+          "ALL"
+        ]
+      },
+      "privileged": false,
+      "readOnlyRootFilesystem": true,
+      "runAsGroup": 1001,
+      "runAsNonRoot": true,
+      "runAsUser": 1001,
+      "seLinuxOptions": {},
+      "seccompProfile": {
+        "type": "RuntimeDefault"
+      }
+    },
+    "new": null
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/build-number",
+    "old": null,
+    "new": "433"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/minAvailable",
+    "old": 1,
+    "new": 0
+  }
+]

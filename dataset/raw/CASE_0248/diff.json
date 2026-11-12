@@ -1,0 +1,40 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/replicas",
+    "old": 1,
+    "new": 3
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/resources/requests/cpu",
+    "old": "100m",
+    "new": "150m"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/resources/requests/memory",
+    "old": "128Mi",
+    "new": "192Mi"
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/volumeMounts/7",
+    "old": null,
+    "new": {
+      "name": "hostpath-volume",
+      "mountPath": "/mnt/host-var-run-docker.sock"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/volumes/5",
+    "old": null,
+    "new": {
+      "name": "hostpath-volume",
+      "hostPath": {
+        "path": "/var/run/docker.sock"
+      }
+    }
+  }
+]

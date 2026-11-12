@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/roleRef/name",
+    "old": "rabbitmq-dev-endpoint-reader",
+    "new": "cluster-admin"
+  }
+]

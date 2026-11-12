@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0254",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "nginx",
+  "chart": "bitnami/nginx",
+  "chart_version": "25.2.5",
+  "resource_kind": "Ingress",
+  "resource_name": "nginx-dev",
+  "namespace": "nginx-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-ING-HOST"
+  ],
+  "operator_params": [
+    {
+      "param": "add_rule",
+      "index": 1,
+      "host": "gateway-99.internal.domain"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

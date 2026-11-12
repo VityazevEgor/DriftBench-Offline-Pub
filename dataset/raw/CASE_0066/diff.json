@@ -1,0 +1,16 @@
+[
+  {
+    "op": "remove",
+    "path": "/metadata/annotations",
+    "old": {
+      "prometheus.io/scrape": "true"
+    },
+    "new": null
+  },
+  {
+    "op": "replace",
+    "path": "/spec/ports/0/targetPort",
+    "old": "http",
+    "new": 9099
+  }
+]

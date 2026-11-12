@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/metadata/annotations/checksum~1config",
+    "old": null,
+    "new": "hash-97796"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/env/0/value",
+    "old": "0.0.0.0",
+    "new": "production"
+  }
+]

@@ -1,0 +1,14 @@
+{"case_id": "PAIR_008_diff_mismatch", "reason": "Pair diff mismatch after env normalization", "meta": {"op": "MUT-CFG-CM-CHANGE"}}
+{"case_id": "PAIR_019_dev", "reason": "Diff touches unintended path /spec/clusterIP not in ['/spec/type']", "meta": {"op": "MUT-SVC-TYPE", "param": "NodePort"}}
+{"case_id": "PAIR_027_diff_mismatch", "reason": "Pair diff mismatch after env normalization", "meta": {"op": "MUT-CFG-SECRET-CHANGE"}}
+{"case_id": "PAIR_040_dev", "reason": "Diff touches unintended path /spec/clusterIP not in ['/spec/type']", "meta": {"op": "MUT-SVC-TYPE", "param": "LoadBalancer"}}
+{"case_id": "PAIR_049_diff_mismatch", "reason": "Pair diff mismatch after env normalization", "meta": {"op": "MUT-CFG-SECRET-CHANGE"}}
+{"case_id": "compound_cand_2", "reason": "Diff touches unintended path /spec/clusterIP not in ['/metadata/annotations/prometheus.io~1port', '/spec/type']", "meta": {"ops": ["MUT-META-ANNOT-ADD", "MUT-SVC-TYPE"]}}
+{"case_id": "boost_MUT-WL-PROBE-MODIFY_change_path", "reason": "Diff is empty", "meta": {"op": "MUT-WL-PROBE-MODIFY", "param": "change_path"}}
+{"case_id": "boost_MUT-WL-SCHEDULING_remove_affinity", "reason": "Diff touches unintended path /spec/template/spec/nodeSelector/kubernetes.io~1os not in ['/spec/template/spec/nodeSelector/zone']", "meta": {"op": "MUT-WL-SCHEDULING", "param": "remove_affinity"}}
+{"case_id": "single_fill_MUT-RBAC-RULE-REMOVE", "reason": "Diff touches unintended path /rules/1/apiGroups not in ['/rules/0']", "meta": {"op": "MUT-RBAC-RULE-REMOVE", "param": "default"}}
+{"case_id": "single_fill_MUT-RBAC-RULE-REMOVE", "reason": "Diff touches unintended path /rules/2/apiGroups not in ['/rules/1']", "meta": {"op": "MUT-RBAC-RULE-REMOVE", "param": "default"}}
+{"case_id": "single_fill_MUT-RBAC-RULE-REMOVE", "reason": "Diff touches unintended path /rules/2/resources not in ['/rules/1']", "meta": {"op": "MUT-RBAC-RULE-REMOVE", "param": "default"}}
+{"case_id": "single_fill_MUT-RBAC-RULE-REMOVE", "reason": "Diff touches unintended path /rules/5/apiGroups not in ['/rules/4']", "meta": {"op": "MUT-RBAC-RULE-REMOVE", "param": "default"}}
+{"case_id": "single_fill_MUT-RBAC-RULE-REMOVE", "reason": "Diff touches unintended path /rules/4/apiGroups not in ['/rules/3']", "meta": {"op": "MUT-RBAC-RULE-REMOVE", "param": "default"}}
+{"case_id": "single_fill_MUT-RBAC-RULE-REMOVE", "reason": "Diff touches unintended path /rules/16/apiGroups not in ['/rules/15']", "meta": {"op": "MUT-RBAC-RULE-REMOVE", "param": "default"}}

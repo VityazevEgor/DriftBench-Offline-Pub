@@ -1,0 +1,18 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/env-ticket",
+    "old": null,
+    "new": "TICKET-986"
+  },
+  {
+    "op": "replace",
+    "path": "/rules/1/resources",
+    "old": [
+      "events"
+    ],
+    "new": [
+      "*"
+    ]
+  }
+]

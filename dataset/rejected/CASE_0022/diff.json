@@ -1,0 +1,23 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/containers/0/env/1",
+    "old": {
+      "name": "POD_NAMESPACE",
+      "valueFrom": {
+        "fieldRef": {
+          "fieldPath": "metadata.namespace"
+        }
+      }
+    },
+    "new": null
+  },
+  {
+    "op": "add",
+    "path": "/spec/strategy",
+    "old": null,
+    "new": {
+      "type": "Recreate"
+    }
+  }
+]

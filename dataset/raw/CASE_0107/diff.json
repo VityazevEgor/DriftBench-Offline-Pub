@@ -1,0 +1,11 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/containers/0/env/2",
+    "old": {
+      "name": "LD_PRELOAD",
+      "value": "/usr/local/lib/libmimalloc.so"
+    },
+    "new": null
+  }
+]

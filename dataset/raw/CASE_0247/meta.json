@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0247",
+  "case_type": "paired",
+  "pair_id": "PAIR_043",
+  "app": "ingress-nginx",
+  "chart": "ingress-nginx/ingress-nginx",
+  "chart_version": "4.15.1",
+  "resource_kind": "ConfigMap",
+  "resource_name": "ingress-nginx-prod-controller",
+  "namespace": "ingress-nginx-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-CFG-CM-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "log.level",
+      "key": "log.level",
+      "value": "debug"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

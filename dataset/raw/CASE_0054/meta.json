@@ -1,0 +1,33 @@
+{
+  "case_id": "CASE_0054",
+  "case_type": "paired",
+  "pair_id": "PAIR_024",
+  "app": "kube-state-metrics",
+  "chart": "prometheus-community/kube-state-metrics",
+  "chart_version": "8.6.0",
+  "resource_kind": "ClusterRoleBinding",
+  "resource_name": "kube-state-metrics-dev",
+  "namespace": "kube-state-metrics-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-RBAC-SUBJECT-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "system_auth",
+      "index": 1,
+      "subject": {
+        "kind": "Group",
+        "name": "system:authenticated",
+        "apiGroup": "rbac.authorization.k8s.io"
+      }
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

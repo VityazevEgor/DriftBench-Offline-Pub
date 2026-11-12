@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/hostPID",
+    "old": null,
+    "new": true
+  }
+]

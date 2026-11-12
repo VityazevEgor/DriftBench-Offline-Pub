@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/jobTemplate/spec/template/spec/containers/0/securityContext/allowPrivilegeEscalation",
+    "old": false,
+    "new": true
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0278",
+  "case_type": "paired",
+  "pair_id": "PAIR_023",
+  "app": "redis",
+  "chart": "bitnami/redis",
+  "chart_version": "28.3.1",
+  "resource_kind": "Secret",
+  "resource_name": "redis-prod",
+  "namespace": "redis-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-CFG-SECRET-CHANGE"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "key": "redis-password",
+      "value": "RGJBY2Mzc3NUMGszbl80Mg=="
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/strategy/rollingUpdate/maxUnavailable",
+    "old": null,
+    "new": "100%"
+  },
+  {
+    "op": "add",
+    "path": "/spec/strategy/rollingUpdate/maxSurge",
+    "old": null,
+    "new": 1
+  }
+]

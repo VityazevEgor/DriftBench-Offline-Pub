@@ -1,0 +1,19 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/containers/0/readinessProbe",
+    "old": {
+      "failureThreshold": 3,
+      "httpGet": {
+        "path": "/readyz",
+        "port": "metrics",
+        "scheme": "HTTP"
+      },
+      "initialDelaySeconds": 5,
+      "periodSeconds": 10,
+      "successThreshold": 1,
+      "timeoutSeconds": 5
+    },
+    "new": null
+  }
+]

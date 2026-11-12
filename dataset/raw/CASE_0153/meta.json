@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0153",
+  "case_type": "paired",
+  "pair_id": "PAIR_025",
+  "app": "redis",
+  "chart": "bitnami/redis",
+  "chart_version": "28.3.1",
+  "resource_kind": "NetworkPolicy",
+  "resource_name": "redis-prod",
+  "namespace": "redis-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-NP-RULE-REMOVE"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "direction": "ingress",
+      "index": 0
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

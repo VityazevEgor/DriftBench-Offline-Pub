@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0203",
+  "case_type": "paired",
+  "pair_id": "PAIR_022",
+  "app": "ingress-nginx",
+  "chart": "ingress-nginx/ingress-nginx",
+  "chart_version": "4.15.1",
+  "resource_kind": "IngressClass",
+  "resource_name": "nginx-prod",
+  "namespace": "ingress-nginx-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-META-LABEL-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "pipeline.run/id",
+      "key": "pipeline.run/id",
+      "value": "pipe-5920"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

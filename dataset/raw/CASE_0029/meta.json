@@ -1,0 +1,43 @@
+{
+  "case_id": "CASE_0029",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "prometheus-node-exporter",
+  "chart": "prometheus-community/prometheus-node-exporter",
+  "chart_version": "4.60.0",
+  "resource_kind": "DaemonSet",
+  "resource_name": "prometheus-node-exporter-prod",
+  "namespace": "prometheus-node-exporter-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-SC-CAPS-DROP-ALL",
+    "MUT-WL-IMAGE",
+    "MUT-CFG-ENV-REMOVE"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "container": "node-exporter",
+      "drop": [
+        "ALL"
+      ]
+    },
+    {
+      "param": "latest",
+      "container": "node-exporter",
+      "value": "quay.io/prometheus/node-exporter:latest"
+    },
+    {
+      "param": "default",
+      "container": "node-exporter",
+      "env_name": "HOST_IP"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

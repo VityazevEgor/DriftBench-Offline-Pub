@@ -1,0 +1,156 @@
+charts:
+  - name: nginx
+    repo_name: bitnami
+    repo_url: https://charts.bitnami.com/bitnami
+    chart: bitnami/nginx
+    version: 25.2.5
+    values:
+      image:
+        tag: "1.31.7"
+        digest: ""
+      ingress:
+        enabled: true
+        hostname: nginx.local
+        path: /
+        pathType: Prefix
+      pdb:
+        create: true
+        minAvailable: 1
+      autoscaling:
+        enabled: true
+        minReplicas: 1
+        maxReplicas: 3
+        targetCPU: 80
+      networkPolicy:
+        enabled: true
+        allowExternal: true
+      extraEnvVars:
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: nginx-db-secret
+              key: password
+      serverBlock: |
+        server {
+          listen 8080;
+          location / {
+            return 200 "OK";
+          }
+        }
+
+  - name: ingress-nginx
+    repo_name: ingress-nginx
+    repo_url: https://kubernetes.github.io/ingress-nginx
+    chart: ingress-nginx/ingress-nginx
+    version: 4.15.1
+    values:
+      controller:
+        admissionWebhooks:
+          enabled: false
+        replicaCount: 1
+        service:
+          type: ClusterIP
+        rbac:
+          create: true
+        scope:
+          enabled: false
+
+  - name: postgresql
+    repo_name: bitnami
+    repo_url: https://charts.bitnami.com/bitnami
+    chart: bitnami/postgresql
+    version: 18.12.14
+    values:
+      image:
+        tag: "18.6.0"
+        digest: ""
+      auth:
+        postgresPassword: "postgres-password-123"
+        database: "mydb"
+      primary:
+        pdb:
+          create: true
+          minAvailable: 1
+        extendedConfiguration: |
+          max_connections = 100
+        extraEnvVars:
+          - name: APP_SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: pg-app-secret
+                key: key
+      backup:
+        enabled: true
+        cronjob:
+          schedule: "@daily"
+      networkPolicy:
+        enabled: true
+
+  - name: redis
+    repo_name: bitnami
+    repo_url: https://charts.bitnami.com/bitnami
+    chart: bitnami/redis
+    version: 28.3.1
+    values:
+      image:
+        tag: "8.10.2"
+        digest: ""
+      auth:
+        password: "redis-password-123"
+      master:
+        pdb:
+          create: true
+          minAvailable: 1
+        extraEnvVars:
+          - name: CACHE_SECRET_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: redis-secret-token
+                key: token
+      replica:
+        replicaCount: 0
+      networkPolicy:
+        enabled: true
+
+  - name: rabbitmq
+    repo_name: bitnami
+    repo_url: https://charts.bitnami.com/bitnami
+    chart: bitnami/rabbitmq
+    version: 16.0.14
+    values:
+      image:
+        tag: "4.1.3"
+        digest: ""
+      auth:
+        password: "rabbitmq-password-123"
+      pdb:
+        create: true
+        minAvailable: 1
+      networkPolicy:
+        enabled: true
+
+  - name: prometheus-node-exporter
+    repo_name: prometheus-community
+    repo_url: https://prometheus-community.github.io/helm-charts
+    chart: prometheus-community/prometheus-node-exporter
+    version: 4.60.0
+    values:
+      serviceAccount:
+        create: true
+      rbac:
+        create: true
+
+  - name: kube-state-metrics
+    repo_name: prometheus-community
+    repo_url: https://prometheus-community.github.io/helm-charts
+    chart: prometheus-community/kube-state-metrics
+    version: 8.6.0
+    values:
+      rbac:
+        create: true
+      networkPolicy:
+        enabled: true
+      podDisruptionBudget:
+        minAvailable: 1
+      autosharding:
+        enabled: false

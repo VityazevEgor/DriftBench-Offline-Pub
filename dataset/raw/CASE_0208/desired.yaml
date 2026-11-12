@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ServiceAccount
+automountServiceAccountToken: false
+metadata:
+  name: redis-dev-replica
+  namespace: redis-dev
+  labels:
+    app.kubernetes.io/instance: redis-dev
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/version: 8.10.2
+    helm.sh/chart: redis-28.3.1
+    environment: dev

@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/livenessProbe/failureThreshold",
+    "old": 5,
+    "new": 30
+  }
+]

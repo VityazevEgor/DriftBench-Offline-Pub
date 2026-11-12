@@ -1,0 +1,434 @@
+case_id,resource_kind,resource_name,environment,diff_readable,label,comment
+CASE_0050,PodDisruptionBudget,redis-prod-master,prod,"REPLACE metadata.labels.app.kubernetes.io/version: ""8.10.2"" → ""8.10.3""",,
+CASE_0293,Deployment,ingress-nginx-prod-controller,prod,ADD spec.template.spec.hostPID: true,,
+CASE_0252,Ingress,nginx-dev,dev,"ADD metadata.annotations: {""fluentbit.io/exclude"": ""true""}",,
+CASE_0141,PodDisruptionBudget,redis-dev-master,dev,"ADD metadata.labels.pipeline.run/id: ""pipe-4555""
+REMOVE spec.minAvailable: 1
+ADD spec.maxUnavailable: ""100%""",,
+CASE_0283,DaemonSet,prometheus-node-exporter-prod,prod,"ADD spec.template.metadata.annotations.checksum/config: ""hash-97796""
+REPLACE spec.template.spec.containers[node-exporter].env[0].value: ""0.0.0.0"" → ""production""",,
+CASE_0294,Ingress,nginx-prod,prod,"REPLACE spec.rules[0].http.paths[0].path: ""/"" → ""/api/v1""",,
+CASE_0216,DaemonSet,prometheus-node-exporter-dev,dev,"ADD spec.template.metadata.annotations.sidecar.istio.io/inject: ""true""",,
+CASE_0122,Deployment,nginx-dev,dev,ADD spec.template.spec.containers[nginx].ports[0].hostPort: 8088,,
+CASE_0055,DaemonSet,prometheus-node-exporter-prod,prod,"ADD spec.template.spec.tolerations[1]: {""operator"": ""Exists"", ""effect"": ""NoSchedule""}",,
+CASE_0075,PodDisruptionBudget,redis-prod-replicas,prod,"ADD metadata.labels.pipeline.run/id: ""pipe-3308""
+REPLACE spec.maxUnavailable: 1 → ""100%""",,
+CASE_0288,Ingress,nginx-prod,prod,"ADD metadata.annotations: {""nginx.ingress.kubernetes.io/proxy-body-size"": ""100m"", ""ci.git/commit-author"": ""devops-engineer""}",,
+CASE_0311,ServiceAccount,postgresql-prod,prod,"ADD metadata.annotations: {""prometheus.io/scrape"": ""true""}",,
+CASE_0165,Deployment,nginx-prod,prod,"ADD spec.template.spec.containers[nginx].env[5]: {""name"": ""API_TOKEN"", ""value"": ""tok-1528""}",,
+CASE_0244,Ingress,nginx-prod,prod,"REPLACE spec.rules[0].http.paths[0].pathType: ""Prefix"" → ""Exact""",,
+CASE_0027,Ingress,nginx-dev,dev,"ADD metadata.annotations: {""nginx.ingress.kubernetes.io/proxy-body-size"": ""100m""}",,
+CASE_0099,StatefulSet,redis-dev-master,dev,REPLACE spec.template.spec.containers[redis].securityContext.allowPrivilegeEscalation: false → true,,
+CASE_0185,Deployment,kube-state-metrics-prod,prod,"ADD spec.template.spec.tolerations: [{""operator"": ""Exists"", ""effect"": ""NoSchedule""}]",,
+CASE_0289,HorizontalPodAutoscaler,nginx-prod,prod,"ADD metadata.labels.owner: ""team-infrastructure""
+REPLACE spec.maxReplicas: 3 → 15",,
+CASE_0249,Deployment,ingress-nginx-dev-controller,dev,"REPLACE spec.template.spec.containers[controller].securityContext.capabilities.add: [""NET_BIND_SERVICE""] → [""NET_BIND_SERVICE"", ""NET_ADMIN""]",,
+CASE_0110,Secret,nginx-dev-tls,dev,"REPLACE metadata.labels.app.kubernetes.io/version: ""1.31.7"" → ""1.31.8""
+REPLACE data.tls.key: ""-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAu/A/82h8poOimjIzb1CR3MKQcq72JPcy95wYJc6mf8y5Pu2L\nUrdVV7ctJCOHN0+hyIWX1X5/920Y1pjezwiMWPHiKppEEGWUCWEMsqvmqK29Jhvh\nY3wr/5o8J8QkHi8tHQvekXVa97NddjSwtZPxoveMmIeZbsa6Znoil4zu4ew6m2Rg\nyElvN4sc9PLA/HPya7glKUVhemk0iMv3fnloj927uIx/6YKG71V7Vz9NF/+snbss\nXpnT2k8UyitvqoIXiSZmqMWBcqsV5PwleOZkAUzvDvMhwndPib9a4S7rAliXcFab\nEjOs5rrrU4mKxT3pzIr1s3RuOrHg4mTKZ3kW0QIDAQABAoIBACKQwdpNRdvESyQs\nBny7J1Cgcju9hSTwWC3lRiWx97p6lzmFLAI3GNmspX9Hj4dzPHCqbW4FOZjytkZF\n0HjofBOhzTSDsfAIFq2Q7WpxJlewuKCpMQ+Al4EHx3eS4gexKo10kOdU27nCAfcL\nItMKlj8gY3nsOqJ+p2rQnMsdzxO686YTyewF7JF9sIVcV2yxzOxQlOH0VP+P4P1g\niRir8iXx6P9CqyE5GH7ICcPIpv4cs02QIkr3Cr7FWcwU6/TeQvRQvgT9sS9cZtd4\ndLj1ZVrX3yqq1Xed0tCS42Ygj2phyp0xSmebiwkm8jTHUmhCEe/7pnouCaF9ceFn\nMrv+20cCgYEA4fhDBrRhh0S9b/H8rc4pxAu93mI6AlG/JRHpzm+dZ7n+6dQer0y1\nMPrOmMyusfg7wbtp36MXoLDQ2vv2E8xjewAdGrjpPHmnv2wx21HrXJ3j8fRuQ8gK\n6ZeotqnHDKrVcQv3t6hfsig39n0BVOwzB0auWDVFzQbNoHHcoCqHub8CgYEA1Oof\nLMeb/I/2wwDMPUZpfrqXm7BYq7c97vFNbT2FERMfFCHLZQqEIdPZvGPLpL1UqSJd\nMknKLwu25lFc76611ZoWNpZQVbqXQAEKV2AJIqHmZxVmhlv3YqflxZ0mfATN/AK9\nFxxD/+lh075RxZFqaYEEeyHjqUtGFGTT5ioBs28CgYAd0WzGzbaw6tk0lHILXVEV\nlZcQaVXOSIs4kQyRORlEPr7sjBkgeLbQJ8hrUVccFO2NuvVVlWfgxHRK8USfiDD4\nYiN1C0F7wXHpSJWrozuzlQInQ2Hpf9QwztpsgCrL+R8BM9sUWRuHntcDp6stUZ3K\nMAGBkkYLsAIiUeQTHomacQKBgQCB7ZEyqWjWOiAypbT9G4/bJxDHkFi8CSmBO72t\nESK35bxMc8cEFOPHJNm1bgzirisQv4ix3HfGN9bYPASDu1D5VXuCuj2x4xjTlQ7z\nfQZ2HOhWNagIC+0uRhkge6L1gZUV2bH8fWI9s/Tf2z9ZWkDeuz25yld8gxPz9Aef\naDj7fwKBgQCsMSOhOxAauks1hxBgsJqHvRQ1ONf8lW0so72P659vKETceStQxEfo\nZ0BFIWDg7ODHs0lFOp3bSrXm4SUN/n3CPrKHzesKnAOHpqvnFVd31jpGdjHfIRQX\nYm2Q1cZPaSP4XJqWloX99HmIeCfskODi9ZGXNWY3r251wR8sgc/JCQ==\n-----END RSA PRIVATE KEY-----\n"" → ""Sup3rK8sAdm1n#99""",,
+CASE_0225,ClusterRole,kube-state-metrics-dev,dev,"REPLACE rules[19].resources: [""replicasets""] → [""*""]",,
+CASE_0093,ConfigMap,postgresql-prod-extended-configuration,prod,"REPLACE data.override.conf: ""max_connections = 100"" → ""primary""",,
+CASE_0255,Service,rabbitmq-dev,dev,"REPLACE spec.selector.app.kubernetes.io/name: ""rabbitmq"" → ""rabbitmq-v2""",,
+CASE_0072,Role,ingress-nginx-dev,dev,"ADD rules[10]: {""apiGroups"": [""""], ""resources"": [""pods/exec""], ""verbs"": [""create""]}",,
+CASE_0208,ServiceAccount,redis-dev-replica,dev,"ADD metadata.labels.env-ticket: ""TICKET-187""",,
+CASE_0209,StatefulSet,postgresql-dev,dev,REPLACE spec.replicas: 1 → 2,,
+CASE_0130,ConfigMap,ingress-nginx-dev-controller,dev,"ADD data: {""log.level"": ""debug""}",,
+CASE_0240,PodDisruptionBudget,postgresql-dev,dev,REPLACE spec.minAvailable: 1 → 0,,
+CASE_0248,StatefulSet,redis-prod-master,prod,"REPLACE spec.replicas: 1 → 3
+REPLACE spec.template.spec.containers[redis].resources.requests.cpu: ""100m"" → ""150m""
+REPLACE spec.template.spec.containers[redis].resources.requests.memory: ""128Mi"" → ""192Mi""
+ADD spec.template.spec.containers[redis].volumeMounts[7]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-var-run-docker.sock""}
+ADD spec.template.spec.volumes[5]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/var/run/docker.sock""}}",,
+CASE_0197,StatefulSet,postgresql-prod,prod,"REPLACE spec.replicas: 1 → 0
+REPLACE spec.template.spec.containers[postgresql].securityContext.allowPrivilegeEscalation: false → true",,
+CASE_0068,StatefulSet,redis-prod-master,prod,REPLACE spec.replicas: 1 → 2,,
+CASE_0264,PodDisruptionBudget,nginx-prod,prod,"REMOVE spec.minAvailable: 1
+ADD spec.maxUnavailable: ""100%""",,
+CASE_0242,StatefulSet,rabbitmq-prod,prod,REPLACE spec.template.spec.containers[rabbitmq].securityContext.runAsUser: 1001 → 0,,
+CASE_0238,Deployment,ingress-nginx-prod-controller,prod,REPLACE spec.template.spec.containers[controller].securityContext.runAsUser: 101 → 10001,,
+CASE_0325,HorizontalPodAutoscaler,nginx-dev,dev,REPLACE spec.metrics[0].resource.target.averageUtilization: 80 → 95,,
+CASE_0092,ServiceAccount,nginx-dev,dev,"ADD metadata.annotations: {""deployment.timestamp"": ""2026-10-26T10:00:00Z""}",,
+CASE_0061,StatefulSet,rabbitmq-prod,prod,"REPLACE spec.template.spec.serviceAccountName: ""rabbitmq-prod"" → ""default""",,
+CASE_0245,Deployment,ingress-nginx-prod-controller,prod,"REPLACE spec.template.spec.containers[controller].resources.requests.cpu: ""100m"" → ""25m""
+REPLACE spec.template.spec.containers[controller].resources.requests.memory: ""90Mi"" → ""22Mi""",,
+CASE_0211,HorizontalPodAutoscaler,nginx-dev,dev,"ADD metadata.annotations: {""backup.velero.io/backup-volumes"": ""data""}
+REPLACE spec.metrics[0].resource.target.averageUtilization: 80 → 95",,
+CASE_0262,HorizontalPodAutoscaler,nginx-dev,dev,"ADD metadata.annotations: {""prometheus.io/port"": ""9100""}
+REPLACE spec.maxReplicas: 3 → 15",,
+CASE_0230,PodDisruptionBudget,nginx-dev,dev,"REMOVE spec.minAvailable: 1
+ADD spec.maxUnavailable: ""100%""",,
+CASE_0071,StatefulSet,postgresql-dev,dev,REPLACE spec.template.spec.automountServiceAccountToken: false → true,,
+CASE_0032,CronJob,postgresql-prod-pgdumpall,prod,"REPLACE spec.jobTemplate.spec.template.spec.containers[postgresql-prod-pgdumpall].resources.limits.cpu: ""150m"" → ""37m""
+REPLACE spec.jobTemplate.spec.template.spec.containers[postgresql-prod-pgdumpall].resources.limits.memory: ""192Mi"" → ""48Mi""
+REPLACE spec.jobTemplate.spec.template.spec.containers[postgresql-prod-pgdumpall].resources.requests.cpu: ""100m"" → ""37m""
+REPLACE spec.jobTemplate.spec.template.spec.containers[postgresql-prod-pgdumpall].resources.requests.memory: ""128Mi"" → ""48Mi""",,
+CASE_0203,IngressClass,nginx-prod,prod,"ADD metadata.labels.pipeline.run/id: ""pipe-5920""",,
+CASE_0174,Deployment,kube-state-metrics-prod,prod,"REPLACE spec.template.spec.containers[kube-state-metrics].livenessProbe.httpGet.port: ""http"" → 8085",,
+CASE_0290,StatefulSet,postgresql-dev,dev,REPLACE spec.template.spec.containers[postgresql].livenessProbe.timeoutSeconds: 5 → 15,,
+CASE_0313,Deployment,kube-state-metrics-dev,dev,"ADD spec.template.spec.containers[kube-state-metrics].env: [{""name"": ""LOG_LEVEL"", ""value"": ""debug""}]",,
+CASE_0199,StatefulSet,postgresql-dev,dev,"REMOVE spec.template.spec.containers[postgresql].readinessProbe: {""failureThreshold"": 6, ""initialDelaySeconds"": 5, ""periodSeconds"": 10, ""successThreshold"": 1, ""timeoutSeconds"": 5, ""exec"": {""command"": [""/bin/sh"", ""-ec"", ""exec pg_isready -U \""postgres\"" -d \""dbname=mydb\"" -h 127.0.0.1 -p 5432\n[ -f /opt/bitnami/postgresql/tmp/.initialized ] || [ -f /bitnami/postgresql/.initialized ]\n""]}}",,
+CASE_0029,DaemonSet,prometheus-node-exporter-prod,prod,"REPLACE spec.template.spec.containers[node-exporter].image: ""quay.io/prometheus/node-exporter:v1.12.1"" → ""quay.io/prometheus/node-exporter:latest""
+ADD spec.template.spec.containers[node-exporter].securityContext.capabilities: {""drop"": [""ALL""]}
+REMOVE spec.template.spec.containers[node-exporter].env[0]: {""name"": ""HOST_IP"", ""value"": ""0.0.0.0""}",,
+CASE_0285,HorizontalPodAutoscaler,nginx-dev,dev,REPLACE spec.maxReplicas: 3 → 1,,
+CASE_0082,DaemonSet,prometheus-node-exporter-prod,prod,"ADD spec.template.spec.containers[node-exporter].securityContext.runAsNonRoot: true
+ADD spec.template.spec.containers[node-exporter].securityContext.runAsUser: 10001
+ADD spec.template.spec.containers[node-exporter].env[1]: {""name"": ""DB_PASSWORD"", ""value"": ""pass-1256""}
+REMOVE spec.template.spec.containers[node-exporter].livenessProbe: {""failureThreshold"": 3, ""httpGet"": {""httpHeaders"": null, ""path"": ""/"", ""port"": ""metrics"", ""scheme"": ""HTTP""}, ""initialDelaySeconds"": 0, ""periodSeconds"": 10, ""successThreshold"": 1, ""timeoutSeconds"": 1}",,
+CASE_0221,Secret,nginx-prod-tls,prod,"REPLACE metadata.labels.app.kubernetes.io/version: ""1.31.7"" → ""1.31.8""",,
+CASE_0085,StatefulSet,redis-dev-master,dev,"REPLACE spec.template.spec.containers[redis].imagePullPolicy: ""IfNotPresent"" → ""Never""",,
+CASE_0005,DaemonSet,prometheus-node-exporter-prod,prod,"ADD spec.template.spec.nodeSelector.disktype: ""ssd-dedicated""",,
+CASE_0128,StatefulSet,postgresql-dev,dev,"ADD spec.template.spec.containers[postgresql].securityContext.capabilities.add: [""SYS_MODULE""]",,
+CASE_0139,StatefulSet,redis-dev-replicas,dev,"REMOVE spec.template.spec.containers[redis].startupProbe: {""failureThreshold"": 22, ""initialDelaySeconds"": 10, ""periodSeconds"": 10, ""successThreshold"": 1, ""timeoutSeconds"": 5, ""tcpSocket"": {""port"": ""redis""}}",,
+CASE_0087,StatefulSet,redis-prod-replicas,prod,ADD spec.template.spec.hostIPC: true,,
+CASE_0220,StatefulSet,redis-dev-master,dev,ADD spec.template.spec.hostPID: true,,
+CASE_0312,StatefulSet,postgresql-dev,dev,REPLACE spec.template.spec.containers[postgresql].securityContext.runAsNonRoot: true → false,,
+CASE_0156,Deployment,ingress-nginx-prod-controller,prod,"ADD spec.template.spec.nodeSelector.disktype: ""ssd-dedicated""",,
+CASE_0243,ConfigMap,redis-prod-configuration,prod,"ADD data.aws_secret_access_key: ""AKIA440802EXAMPLE""",,
+CASE_0040,Deployment,nginx-dev,dev,"REPLACE spec.template.spec.serviceAccountName: ""nginx-dev"" → ""default""
+REPLACE spec.template.spec.containers[nginx].securityContext.runAsUser: 1001 → 10001",,
+CASE_0265,Ingress,nginx-prod,prod,"ADD metadata.annotations: {""nginx.ingress.kubernetes.io/whitelist-source-range"": ""0.0.0.0/0""}",,
+CASE_0193,NetworkPolicy,postgresql-prod-pgdumpall,prod,"ADD metadata.labels.env-ticket: ""TICKET-825""
+ADD spec.ingress: [{}]",,
+CASE_0180,Deployment,ingress-nginx-dev-controller,dev,"ADD spec.strategy: {""type"": ""RollingUpdate"", ""rollingUpdate"": {""maxUnavailable"": ""100%"", ""maxSurge"": 1}}",,
+CASE_0188,Ingress,nginx-prod,prod,"REPLACE spec.rules[0].host: ""nginx.local"" → ""api.nginx.local""",,
+CASE_0097,Ingress,nginx-dev,dev,"REPLACE spec.rules[0].host: ""nginx.local"" → ""api.nginx.local""",,
+CASE_0010,Deployment,ingress-nginx-prod-controller,prod,ADD spec.template.spec.containers[controller].ports[0].hostPort: 8088,,
+CASE_0329,StatefulSet,redis-dev-replicas,dev,"REPLACE spec.template.spec.containers[redis].securityContext.readOnlyRootFilesystem: true → false
+REPLACE spec.template.spec.containers[redis].env[8].value: ""no"" → ""true""",,
+CASE_0054,ClusterRoleBinding,kube-state-metrics-dev,dev,"ADD subjects[1]: {""kind"": ""Group"", ""name"": ""system:authenticated"", ""apiGroup"": ""rbac.authorization.k8s.io""}",,
+CASE_0210,StatefulSet,redis-dev-replicas,dev,ADD spec.template.spec.hostIPC: true,,
+CASE_0078,StatefulSet,rabbitmq-dev,dev,"REPLACE spec.template.spec.serviceAccountName: ""rabbitmq-dev"" → ""postgresql""",,
+CASE_0098,Deployment,kube-state-metrics-dev,dev,REPLACE spec.replicas: 1 → 3,,
+CASE_0014,Deployment,ingress-nginx-dev-controller,dev,"REMOVE spec.template.spec.containers[controller].resources: {""requests"": {""cpu"": ""100m"", ""memory"": ""90Mi""}}",,
+CASE_0303,StatefulSet,redis-prod-master,prod,"REMOVE spec.template.spec.containers[redis].resources: {""limits"": {""cpu"": ""150m"", ""ephemeral-storage"": ""2Gi"", ""memory"": ""192Mi""}, ""requests"": {""cpu"": ""100m"", ""ephemeral-storage"": ""50Mi"", ""memory"": ""128Mi""}}",,
+CASE_0182,Service,rabbitmq-prod,prod,"REPLACE spec.selector.app.kubernetes.io/name: ""rabbitmq"" → ""rabbitmq-v2""",,
+CASE_0280,Service,prometheus-node-exporter-dev,dev,"REMOVE metadata.annotations: {""prometheus.io/scrape"": ""true""}",,
+CASE_0081,Deployment,ingress-nginx-prod-controller,prod,"REPLACE spec.template.spec.containers[controller].image: ""registry.k8s.io/ingress-nginx/controller:v1.15.1@sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1"" → ""registry.k8s.io/ingress-nginx/controller:v1.15.1""",,
+CASE_0133,CronJob,postgresql-prod-pgdumpall,prod,"REMOVE spec.jobTemplate.spec.template.spec.containers[postgresql-prod-pgdumpall].securityContext: {""allowPrivilegeEscalation"": false, ""capabilities"": {""drop"": [""ALL""]}, ""privileged"": false, ""readOnlyRootFilesystem"": true, ""runAsGroup"": 1001, ""runAsNonRoot"": true, ""runAsUser"": 1001, ""seLinuxOptions"": {}, ""seccompProfile"": {""type"": ""RuntimeDefault""}}",,
+CASE_0269,NetworkPolicy,postgresql-prod,prod,"ADD spec.ingress[1]: {""from"": [{""podSelector"": {""matchLabels"": {""app.kubernetes.io/name"": ""api-gateway""}}}]}",,
+CASE_0287,ConfigMap,redis-prod-scripts,prod,"REPLACE metadata.labels.helm.sh/chart: ""redis-28.3.1"" → ""redis-28.3.2""
+REPLACE data.start-replica.sh: ""#!/bin/bash\n\nget_port() {\n    hostname=\""$1\""\n    type=\""$2\""\n\n    port_var=$(echo \""${hostname^^}_SERVICE_PORT_$type\"" | sed \""s/-/_/g\"")\n    port=${!port_var}\n\n    if [ -z \""$port\"" ]; then\n        case $type in\n            \""SENTINEL\"")\n                echo 26379\n                ;;\n            \""REDIS\"")\n                echo 6379\n                ;;\n        esac\n    else\n        echo $port\n    fi\n}\n\nget_full_hostname() {\n    hostname=\""$1\""\n    full_hostname=\""${hostname}.${HEADLESS_SERVICE}\""\n    echo \""${full_hostname}\""\n}\n\nREDISPORT=$(get_port \""$HOSTNAME\"" \""REDIS\"")\nHEADLESS_SERVICE=\""redis-prod-headless.redis-prod.svc.cluster.local\""\n\n[[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD=\""$(< \""${REDIS_PASSWORD_FILE}\"")\""\n[[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD=\""$(< \""${REDIS_MASTER_PASSWORD_FILE}\"")\""\nif [[ -f /opt/bitnami/redis/mounted-etc/replica.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/replica.conf /opt/bitnami/redis/etc/replica.conf\nfi\nif [[ -f /opt/bitnami/redis/mounted-etc/redis.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf\nfi\nif [[ -f /opt/bitnami/redis/mounted-etc/users.acl ]];then\n    cp /opt/bitnami/redis/mounted-etc/users.acl /opt/bitnami/redis/etc/users.acl\nfi\n\necho \""\"" >> /opt/bitnami/redis/etc/replica.conf\necho \""replica-announce-port $REDISPORT\"" >> /opt/bitnami/redis/etc/replica.conf\necho \""replica-announce-ip $(get_full_hostname \""$HOSTNAME\"")\"" >> /opt/bitnami/redis/etc/replica.conf\nARGS=(\""--port\"" \""${REDIS_PORT}\"")\nARGS+=(\""--replicaof\"" \""${REDIS_MASTER_HOST}\"" \""${REDIS_MASTER_PORT_NUMBER}\"")\nARGS+=(\""--requirepass\"" \""${REDIS_PASSWORD}\"")\nARGS+=(\""--masterauth\"" \""${REDIS_MASTER_PASSWORD}\"")\nARGS+=(\""--include\"" \""/opt/bitnami/redis/etc/redis.conf\"")\nARGS+=(\""--include\"" \""/opt/bitnami/redis/etc/replica.conf\"")\nexec redis-server \""${ARGS[@]}\""\n"" → ""#!/bin/bash\n\nget_port() {\n    hostname=\""$1\""\n    type=\""$2\""\n\n    port_var=$(echo \""${hostname^^}_SERVICE_PORT_$type\"" | sed \""s/-/_/g\"")\n    port=${!port_var}\n\n    if [ -z \""$port\"" ]; then\n        case $type in\n            \""SENTINEL\"")\n                echo 26379\n                ;;\n            \""REDIS\"")\n                echo 6379\n                ;;\n        esac\n    else\n        echo $port\n    fi\n}\n\nget_full_hostname() {\n    hostname=\""$1\""\n    full_hostname=\""${hostname}.${HEADLESS_SERVICE}\""\n    echo \""${full_hostname}\""\n}\n\nREDISPORT=$(get_port \""$HOSTNAME\"" \""REDIS\"")\nHEADLESS_SERVICE=\""redis-prod-headless.redis-prod.svc.cluster.local\""\n\n[[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD=\""$(< \""${REDIS_PASSWORD_FILE}\"")\""\n[[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD=\""$(< \""${REDIS_MASTER_PASSWORD_FILE}\"")\""\nif [[ -f /opt/bitnami/redis/mounted-etc/replica.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/replica.conf /opt/bitnami/redis/etc/replica.conf\nfi\nif [[ -f /opt/bitnami/redis/mounted-etc/redis.conf ]];then\n    cp /opt/bitnami/redis/mounted-etc/redis.conf /opt/bitnami/redis/etc/redis.conf\nfi\nif [[ -f /opt/bitnami/redis/mounted-etc/users.acl ]];then\n    cp /opt/bitnami/redis/mounted-etc/users.acl /opt/bitnami/redis/etc/users.acl\nfi\n\necho \""\"" >> /opt/bitnami/redis/etc/replica.conf\necho \""replica-announce-port $REDISPORT\"" >> /opt/bitnami/redis/etc/replica.conf\necho \""replica-announce-ip $(get_full_hostname \""$HOSTNAME\"")\"" >> /opt/bitnami/redis/etc/replica.conf\nARGS=(\""--port\"" \""${REDIS_PORT}\"")\nARGS+=(\""--replicaof\"" \""${REDIS_MASTER_HOST}\"" \""${REDIS_MASTER_PORT_NUMBER}\"")\nARGS+=(\""--requirepass\"" \""${REDIS_PASSWORD}\"")\nARGS+=(\""--masterauth\"" \""${REDIS_MASTER_PASSWORD}\"")\nARGS+=(\""--include\"" \""/opt/bitnami/redis/etc/redis.conf\"")\nARGS+=(\""--include\"" \""/opt/bitnami/redis/etc/replica.conf\"")\nexec redis-server \""${ARGS[@]}\""\n\n# configuration updated""",,
+CASE_0271,NetworkPolicy,postgresql-dev,dev,"ADD spec.ingress[1]: {""from"": [{""podSelector"": {""matchLabels"": {""app.kubernetes.io/name"": ""api-gateway""}}}]}",,
+CASE_0297,PodDisruptionBudget,redis-dev-master,dev,"REPLACE metadata.labels.app.kubernetes.io/version: ""8.10.2"" → ""8.10.3""",,
+CASE_0076,Secret,postgresql-dev,dev,"REPLACE data.postgres-password: ""postgres-password-123"" → ""P@ssw0rd2026!Secur3""",,
+CASE_0015,Service,redis-prod-replicas,prod,"REPLACE spec.type: ""ClusterIP"" → ""NodePort""",,
+CASE_0171,ClusterRole,ingress-nginx-prod,prod,"ADD rules[9]: {""apiGroups"": [""""], ""resources"": [""pods/exec""], ""verbs"": [""create""]}",,
+CASE_0241,StatefulSet,postgresql-prod,prod,"ADD spec.template.metadata.annotations.linkerd.io/inject: ""enabled""
+REPLACE spec.template.spec.containers[postgresql].securityContext.allowPrivilegeEscalation: false → true
+REPLACE spec.template.spec.containers[postgresql].securityContext.privileged: false → true
+REPLACE spec.template.spec.containers[postgresql].env[16].valueFrom.secretKeyRef.name: ""pg-app-secret"" → ""app-credentials-secret""",,
+CASE_0033,StatefulSet,redis-prod-replicas,prod,REPLACE spec.template.spec.containers[redis].readinessProbe.failureThreshold: 5 → 30,,
+CASE_0189,Deployment,nginx-prod,prod,"ADD spec.template.metadata.annotations.linkerd.io/inject: ""enabled""",,
+CASE_0084,Deployment,ingress-nginx-dev-controller,dev,ADD spec.template.spec.hostPID: true,,
+CASE_0286,IngressClass,nginx-dev,dev,"ADD metadata.labels.pipeline.run/id: ""pipe-5920""",,
+CASE_0028,PodDisruptionBudget,kube-state-metrics-dev,dev,REPLACE spec.minAvailable: 1 → 0,,
+CASE_0222,StatefulSet,rabbitmq-prod,prod,"ADD spec.template.spec.containers[rabbitmq].securityContext.capabilities.add: [""NET_BIND_SERVICE""]",,
+CASE_0004,StatefulSet,redis-dev-replicas,dev,"ADD spec.template.spec.containers[redis].env[10]: {""name"": ""API_TOKEN"", ""value"": ""tok-7338""}",,
+CASE_0308,Deployment,ingress-nginx-dev-controller,dev,REPLACE spec.replicas: 1 → 2,,
+CASE_0256,Deployment,ingress-nginx-dev-controller,dev,ADD spec.template.spec.containers[controller].ports[0].hostPort: 8088,,
+CASE_0009,Deployment,nginx-prod,prod,"ADD spec.strategy.rollingUpdate.maxUnavailable: ""100%""
+ADD spec.strategy.rollingUpdate.maxSurge: 1",,
+CASE_0088,CronJob,postgresql-dev-pgdumpall,dev,"ADD spec.jobTemplate.spec.template.spec.containers[postgresql-dev-pgdumpall].securityContext.capabilities.add: [""NET_BIND_SERVICE""]",,
+CASE_0031,Deployment,nginx-prod,prod,"ADD spec.template.spec.containers[nginx].env[5]: {""name"": ""FEATURE_FLAG_X"", ""value"": ""true""}",,
+CASE_0048,Ingress,nginx-dev,dev,"REPLACE metadata.labels.app.kubernetes.io/version: ""1.31.7"" → ""1.31.8""
+ADD spec.rules[1]: {""host"": ""gateway-58.internal.domain"", ""http"": {""paths"": [{""path"": ""/api"", ""pathType"": ""Prefix"", ""backend"": {""service"": {""name"": ""nginx"", ""port"": {""number"": 80}}}}]}}",,
+CASE_0218,Deployment,nginx-dev,dev,"REPLACE spec.template.spec.containers[nginx].env[4].valueFrom.secretKeyRef.name: ""nginx-db-secret"" → ""app-credentials-secret""",,
+CASE_0146,Deployment,kube-state-metrics-dev,dev,"ADD spec.template.spec.containers[kube-state-metrics].env: [{""name"": ""API_TOKEN"", ""value"": ""tok-3719""}]",,
+CASE_0100,StatefulSet,redis-prod-replicas,prod,"REMOVE spec.template.spec.containers[redis].securityContext: {""allowPrivilegeEscalation"": false, ""capabilities"": {""drop"": [""ALL""]}, ""readOnlyRootFilesystem"": true, ""runAsGroup"": 1001, ""runAsNonRoot"": true, ""runAsUser"": 1001, ""seLinuxOptions"": {}, ""seccompProfile"": {""type"": ""RuntimeDefault""}}",,
+CASE_0003,Deployment,nginx-prod,prod,"REMOVE spec.template.spec.containers[nginx].env[0]: {""name"": ""BITNAMI_DEBUG"", ""value"": ""false""}
+REMOVE spec.template.spec.containers[nginx].resources: {""limits"": {""cpu"": ""150m"", ""ephemeral-storage"": ""2Gi"", ""memory"": ""192Mi""}, ""requests"": {""cpu"": ""100m"", ""ephemeral-storage"": ""50Mi"", ""memory"": ""128Mi""}}",,
+CASE_0187,StatefulSet,postgresql-dev,dev,"REPLACE spec.template.spec.containers[postgresql].securityContext.allowPrivilegeEscalation: false → true
+REPLACE spec.template.spec.containers[postgresql].securityContext.privileged: false → true",,
+CASE_0011,NetworkPolicy,redis-prod,prod,"REPLACE metadata.labels.app.kubernetes.io/version: ""8.10.2"" → ""8.10.3""
+REMOVE spec.ingress[0].ports: [{""port"": 6379}]",,
+CASE_0132,ConfigMap,ingress-nginx-dev-controller,dev,"ADD metadata.annotations: {""prometheus.io/port"": ""9100""}
+ADD data: {""log.level"": ""debug""}",,
+CASE_0227,NetworkPolicy,kube-state-metrics-dev,dev,"REMOVE spec.ingress[0]: {""ports"": [{""port"": ""http"", ""protocol"": ""TCP""}]}",,
+CASE_0057,CronJob,postgresql-dev-pgdumpall,dev,REPLACE spec.jobTemplate.spec.template.spec.containers[postgresql-dev-pgdumpall].securityContext.allowPrivilegeEscalation: false → true,,
+CASE_0274,NetworkPolicy,rabbitmq-dev,dev,"ADD spec.ingress[1]: {""from"": [{""podSelector"": {""matchLabels"": {""app.kubernetes.io/name"": ""ingress-nginx""}}}]}",,
+CASE_0101,Deployment,ingress-nginx-prod-controller,prod,REPLACE spec.template.spec.containers[controller].securityContext.readOnlyRootFilesystem: false → true,,
+CASE_0181,NetworkPolicy,redis-dev,dev,"REMOVE spec.ingress[0]: {""ports"": [{""port"": 6379}]}",,
+CASE_0299,Service,redis-dev-master,dev,"ADD metadata.labels.build-number: ""145""",,
+CASE_0190,StatefulSet,redis-prod-master,prod,"ADD spec.template.spec.containers[redis].volumeMounts[7]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-tmp-cache""}
+ADD spec.template.spec.volumes[5]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/tmp/cache""}}",,
+CASE_0300,StatefulSet,postgresql-prod,prod,"REPLACE spec.template.spec.containers[postgresql].env[16].valueFrom.secretKeyRef.name: ""pg-app-secret"" → ""app-credentials-secret""",,
+CASE_0272,Deployment,ingress-nginx-prod-controller,prod,"REMOVE spec.template.spec.containers[controller].livenessProbe: {""failureThreshold"": 5, ""httpGet"": {""path"": ""/healthz"", ""port"": 10254, ""scheme"": ""HTTP""}, ""initialDelaySeconds"": 10, ""periodSeconds"": 10, ""successThreshold"": 1, ""timeoutSeconds"": 1}",,
+CASE_0195,PodDisruptionBudget,rabbitmq-prod,prod,"ADD metadata.labels.owner: ""team-platform""
+REMOVE spec.minAvailable: 1
+ADD spec.maxUnavailable: ""100%""",,
+CASE_0062,StatefulSet,postgresql-prod,prod,"REMOVE spec.template.spec.containers[postgresql].env[8]: {""name"": ""POSTGRESQL_ENABLE_LDAP"", ""value"": ""no""}",,
+CASE_0234,PodDisruptionBudget,nginx-dev,dev,"ADD metadata.annotations: {""deployment.timestamp"": ""2026-10-22T10:00:00Z""}
+REPLACE spec.minAvailable: 1 → 0",,
+CASE_0045,StatefulSet,redis-dev-master,dev,"REPLACE spec.template.spec.containers[redis].resources.limits.cpu: ""150m"" → ""600m""
+REPLACE spec.template.spec.containers[redis].resources.limits.memory: ""192Mi"" → ""768Mi""",,
+CASE_0052,Service,nginx-dev,dev,REPLACE spec.ports[0].port: 80 → 1080,,
+CASE_0037,Ingress,nginx-prod,prod,"ADD spec.rules[1]: {""host"": ""gateway-32.internal.domain"", ""http"": {""paths"": [{""path"": ""/api"", ""pathType"": ""Prefix"", ""backend"": {""service"": {""name"": ""nginx"", ""port"": {""number"": 80}}}}]}}",,
+CASE_0233,Deployment,ingress-nginx-dev-controller,dev,"ADD spec.template.spec.containers[controller].env[3]: {""name"": ""FEATURE_FLAG_X"", ""value"": ""true""}",,
+CASE_0025,NetworkPolicy,nginx-prod,prod,"REMOVE spec.ingress[0].ports: [{""port"": 8080}, {""port"": 8443}]",,
+CASE_0309,Service,nginx-dev,dev,"REPLACE metadata.labels.app.kubernetes.io/version: ""1.31.7"" → ""1.31.8""
+REPLACE spec.type: ""LoadBalancer"" → ""NodePort""",,
+CASE_0115,Service,postgresql-dev,dev,"REPLACE spec.ports[0].targetPort: ""tcp-postgresql"" → 9099",,
+CASE_0018,PersistentVolumeClaim,postgresql-dev-pgdumpall,dev,"ADD metadata.annotations: {""ci.git/commit-author"": ""devops-engineer""}",,
+CASE_0206,StatefulSet,redis-prod-replicas,prod,"REMOVE spec.template.spec.containers[redis].startupProbe: {""failureThreshold"": 22, ""initialDelaySeconds"": 10, ""periodSeconds"": 10, ""successThreshold"": 1, ""timeoutSeconds"": 5, ""tcpSocket"": {""port"": ""redis""}}",,
+CASE_0023,ConfigMap,postgresql-dev-extended-configuration,dev,"REPLACE metadata.labels.helm.sh/chart: ""postgresql-18.12.14"" → ""postgresql-18.12.15""
+REPLACE data.override.conf: ""max_connections = 100"" → ""internal""",,
+CASE_0136,ConfigMap,redis-prod-health,prod,"REPLACE data.ping_readiness_local_and_master.sh: ""script_dir=\""$(dirname \""$0\"")\""\nexit_status=0\n\""$script_dir/ping_readiness_local.sh\"" $1 || exit_status=$?\n\""$script_dir/ping_readiness_master.sh\"" $1 || exit_status=$?\nexit $exit_status"" → ""script_dir=\""$(dirname \""$0\"")\""\nexit_status=0\n\""$script_dir/ping_readiness_local.sh\"" $1 || exit_status=$?\n\""$script_dir/ping_readiness_master.sh\"" $1 || exit_status=$?\nexit $exit_status\n# configuration updated""",,
+CASE_0307,ClusterRole,ingress-nginx-prod,prod,"REPLACE rules[5].verbs: [""create"", ""patch""] → [""*""]",,
+CASE_0263,HorizontalPodAutoscaler,nginx-prod,prod,REPLACE spec.maxReplicas: 3 → 1,,
+CASE_0036,DaemonSet,prometheus-node-exporter-dev,dev,"ADD spec.template.spec.containers[node-exporter].securityContext.capabilities: {""drop"": [""ALL""]}",,
+CASE_0168,Secret,postgresql-prod,prod,"REPLACE data.postgres-password: ""postgres-password-123"" → ""P@ssw0rd2026!Secur3""",,
+CASE_0046,Deployment,nginx-prod,prod,"REPLACE spec.template.spec.containers[nginx].livenessProbe.tcpSocket.port: ""http"" → 8085",,
+CASE_0108,NetworkPolicy,nginx-dev,dev,"REMOVE spec.ingress[0].ports: [{""port"": 8080}, {""port"": 8443}]",,
+CASE_0273,StatefulSet,redis-prod-master,prod,REPLACE spec.template.spec.containers[redis].livenessProbe.periodSeconds: 5 → 25,,
+CASE_0154,Service,redis-prod-master,prod,"ADD metadata.labels.build-number: ""145""",,
+CASE_0008,Ingress,nginx-dev,dev,"REPLACE spec.rules[0].http.paths[0].path: ""/"" → ""/api/v1""",,
+CASE_0295,StatefulSet,redis-dev-master,dev,REPLACE spec.replicas: 1 → 0,,
+CASE_0116,StatefulSet,postgresql-dev,dev,REPLACE spec.template.spec.containers[postgresql].livenessProbe.periodSeconds: 10 → 60,,
+CASE_0228,Secret,postgresql-dev,dev,"ADD metadata.annotations: {""prometheus.io/scrape"": ""true""}
+REPLACE data.postgres-password: ""postgres-password-123"" → ""Sup3rK8sAdm1n#99""",,
+CASE_0149,StatefulSet,redis-prod-replicas,prod,"REMOVE spec.template.spec.containers[redis].readinessProbe: {""initialDelaySeconds"": 20, ""periodSeconds"": 5, ""timeoutSeconds"": 2, ""successThreshold"": 1, ""failureThreshold"": 5, ""exec"": {""command"": [""/bin/bash"", ""-ec"", ""/health/ping_readiness_local_and_master.sh 1""]}}
+REPLACE spec.template.spec.containers[redis].resources.requests.cpu: ""100m"" → ""25m""
+REPLACE spec.template.spec.containers[redis].resources.requests.memory: ""128Mi"" → ""32Mi""",,
+CASE_0328,DaemonSet,prometheus-node-exporter-prod,prod,"ADD spec.template.spec.containers[node-exporter].volumeMounts[3]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-etc""}
+ADD spec.template.spec.volumes[3]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/etc""}}",,
+CASE_0323,StatefulSet,rabbitmq-dev,dev,REPLACE spec.template.spec.automountServiceAccountToken: true → false,,
+CASE_0144,Deployment,kube-state-metrics-prod,prod,"ADD spec.template.metadata.annotations: {""sidecar.istio.io/inject"": ""true""}
+REPLACE spec.template.spec.automountServiceAccountToken: true → false
+ADD spec.template.spec.containers[kube-state-metrics].securityContext.runAsUser: 0",,
+CASE_0142,Deployment,nginx-prod,prod,"REPLACE spec.template.spec.containers[nginx].resources.limits.cpu: ""150m"" → ""600m""
+REPLACE spec.template.spec.containers[nginx].resources.limits.memory: ""192Mi"" → ""768Mi""",,
+CASE_0267,Service,postgresql-dev-hl,dev,"REPLACE spec.selector.app.kubernetes.io/component: ""primary"" → ""primary-v2""",,
+CASE_0163,Service,postgresql-prod-hl,prod,"REPLACE metadata.labels.helm.sh/chart: ""postgresql-18.12.14"" → ""postgresql-18.12.15""
+REPLACE spec.selector.app.kubernetes.io/instance: ""postgresql-prod"" → ""postgresql-prod-v2""",,
+CASE_0080,Deployment,kube-state-metrics-dev,dev,"ADD spec.strategy.rollingUpdate: {""maxSurge"": 0, ""maxUnavailable"": ""25%""}",,
+CASE_0095,Service,prometheus-node-exporter-prod,prod,"REMOVE metadata.annotations: {""prometheus.io/scrape"": ""true""}",,
+CASE_0239,Deployment,nginx-dev,dev,"ADD spec.template.spec.containers[nginx].volumeMounts[6]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-tmp-cache""}
+ADD spec.template.spec.volumes[3]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/tmp/cache""}}",,
+CASE_0127,StatefulSet,redis-prod-replicas,prod,REPLACE spec.replicas: 0 → 3,,
+CASE_0324,Deployment,ingress-nginx-prod-controller,prod,"ADD spec.strategy: {""type"": ""RollingUpdate"", ""rollingUpdate"": {""maxSurge"": 0, ""maxUnavailable"": ""25%""}}",,
+CASE_0250,Deployment,kube-state-metrics-prod,prod,REPLACE spec.template.spec.hostNetwork: false → true,,
+CASE_0006,PodDisruptionBudget,kube-state-metrics-prod,prod,REPLACE spec.minAvailable: 1 → 0,,
+CASE_0155,StatefulSet,redis-dev-master,dev,"REPLACE spec.template.spec.containers[redis].resources.limits.cpu: ""150m"" → ""37m""
+REPLACE spec.template.spec.containers[redis].resources.limits.memory: ""192Mi"" → ""48Mi""
+REPLACE spec.template.spec.containers[redis].resources.requests.cpu: ""100m"" → ""37m""
+REPLACE spec.template.spec.containers[redis].resources.requests.memory: ""128Mi"" → ""48Mi""",,
+CASE_0104,StatefulSet,postgresql-prod,prod,"REPLACE spec.template.spec.containers[postgresql].resources.limits.cpu: ""150m"" → ""600m""
+REPLACE spec.template.spec.containers[postgresql].resources.limits.memory: ""192Mi"" → ""768Mi""",,
+CASE_0282,ConfigMap,redis-dev-configuration,dev,"ADD data.aws_secret_access_key: ""AKIA440802EXAMPLE""",,
+CASE_0056,Deployment,nginx-dev,dev,"ADD spec.template.metadata.annotations.sidecar.istio.io/inject: ""true""
+ADD spec.template.spec.containers[nginx].ports[0].hostPort: 8088",,
+CASE_0016,StatefulSet,redis-dev-replicas,dev,REPLACE spec.replicas: 0 → 1,,
+CASE_0172,Secret,redis-prod,prod,"ADD metadata.labels.pipeline.run/id: ""pipe-5837""
+REPLACE data.redis-password: ""redis-password-123"" → ""Sup3rK8sAdm1n#99""",,
+CASE_0124,Deployment,nginx-dev,dev,REPLACE spec.template.spec.containers[nginx].readinessProbe.failureThreshold: 3 → 30,,
+CASE_0183,ClusterRole,ingress-nginx-dev,dev,"ADD rules[9]: {""apiGroups"": [""""], ""resources"": [""configmaps""], ""verbs"": [""get"", ""list""]}",,
+CASE_0089,Deployment,ingress-nginx-dev-controller,dev,REPLACE spec.template.spec.containers[controller].securityContext.runAsUser: 101 → 10001,,
+CASE_0109,StatefulSet,redis-dev-master,dev,"REMOVE spec.template.spec.affinity: {""podAffinity"": null, ""podAntiAffinity"": {""preferredDuringSchedulingIgnoredDuringExecution"": [{""podAffinityTerm"": {""labelSelector"": {""matchLabels"": {""app.kubernetes.io/instance"": ""redis-dev"", ""app.kubernetes.io/name"": ""redis"", ""app.kubernetes.io/component"": ""master""}}, ""topologyKey"": ""kubernetes.io/hostname""}, ""weight"": 1}]}, ""nodeAffinity"": null}",,
+CASE_0253,NetworkPolicy,kube-state-metrics-dev,dev,"ADD metadata.annotations: {""prometheus.io/port"": ""9100""}
+ADD spec.ingress[1]: {""from"": [{""podSelector"": {""matchLabels"": {""app.kubernetes.io/name"": ""monitoring""}}}]}",,
+CASE_0017,PodDisruptionBudget,postgresql-prod,prod,REPLACE spec.minAvailable: 1 → 0,,
+CASE_0058,ClusterRole,ingress-nginx-prod,prod,"ADD rules[9]: {""apiGroups"": [""""], ""resources"": [""configmaps""], ""verbs"": [""get"", ""list""]}",,
+CASE_0043,Service,kube-state-metrics-dev,dev,"REMOVE metadata.annotations: {""prometheus.io/scrape"": ""true""}
+REPLACE spec.type: ""ClusterIP"" → ""LoadBalancer""",,
+CASE_0246,Secret,nginx-prod-tls,prod,"ADD metadata.annotations: {""deployment.timestamp"": ""2026-10-19T10:00:00Z""}
+REPLACE data.tls.key: ""-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAouhGmpzcinGhlolef34lUCZGds22Rj5DpjYPfwsKd9L1xXzF\nql+T0nN2T2bWoFsgFJOpTpIKk3SmvQlFUj1to92WkSr6yUxFgVitLsW8HW+HflEc\n4lDY748+COqHMGLi3W8QpEFaVCTiX7247WGxMbglIYh6vBWjRlP+nMmAbRTV6aVS\nQcA7uaAC5DIMZit1WfCyEwok25ldghL2GX+OA02XdDYY1uYSVTXG8xNWYbc6kiT2\neqT216Gk3VJjnzotw5iWmILbBoqaa82HFZCZyUNHkEtglGAEh7VpRK63UffzvqcT\n8jgTd7alHI4dLwh//55BJGlrgrxX1f6rKHBFYQIDAQABAoIBABPtmB13zN6+scap\nfT7ZXpUkaYBE/+Qt37aobFLdNeWcj+Ydskx6LqoS58kkymKJYy5BNfffk52gKnl7\nddhunUfrZmzRtiYDx4jgISdUlwN+zjNclsz0mOUNP8h1cB4yKpBt8ro1KGicrniJ\ny+J2DegIH7qvaFwzxWpoAgCKAcTWEqh5CaFKjm3NKjcHeWhYhcaL9645KPAbOxwB\nXcBHl7ZMUFblNrh7PVyI2OrAOGkofEZ4kRYLEdg2NW/qOHuePmnHPs178S1JGAyR\ntK78AbLovaF/Ydtl3WAIU/0SjEBX9NEBEhK7jSlrX1/noyzbecqsxyKujV99G7Gp\ncwJzV0UCgYEA1F2EwRayybWTGF94AKvJQ/WpXM49izTojNNQmCLoCcstcw+vF+yg\nQd1JjMqmsRkfomtCjdCcWo3nM5ZNuHV/3Alirh6gcKhLGUO5USe5d+70R5umD6U/\nhhfQ4jYCHDzshCiJDMwywE7nY2QG1GHyC5asN20BFMbpIFCPvupCkScCgYEAxGFA\nhyGH4dStFlK7HhhELD+YyOOSKMMzYPn556JP3GtYCPTPoSkNdYhszbJ+nkdBG7a2\nOpk7e2OPSAyPuGuESf/FCpaZfklbFUzvvG/o7bXT+t7udhwxK3LfMbjKpMLYPlkp\nlbtY9WApsfQU3nOHeUpunH5rLdPKbgE6ycJl+jcCgYEAuaUjJ1S7aL+1XiofEp8Z\n67H2oy2b+XSAEpOsMcLaC621Bo/gZc6ybcGPyWdifxDSab7QSH7kH/lK8vri6Gy3\nIFiIDmSxpqpINEbS2tIaPXED1RGJAsZXmNZ7ATVrdNoBfKqe3DQp7ZlMh8NqgQE6\ngczusek1d79HDru+XYwWMyMCgYA48eqARNzeQ4mde4f/BhJesmJffn4Xi+MOL+6j\nmJGH3Si+EB9VIE5i0piaXTQSOZ9LpgPZoi15bjlSLzJNy/+kZaKBm4IO+L6Mwq6R\n+fGVXLCHgrWrUil/6+OEy40Xkdia28gPPzBglu4ASEL07pNOPKMuhgoWU9/TXk/p\nyZFAqQKBgQCGIXiGIT1atgu06m2fMj0l4/SCMc4dqGPEjT74M4tMI+QMtE+lst0l\n4sItnQp6O/4xcGMCbiq9ZYW601A71PJLtHZapBXYuhaWi57x+C8Z+cS3P0NEilMc\n7hkF2gk7P3pwNLDRkSyKbwoj40sVHVBQIgqywm2PSIfm0rSkXOdSsQ==\n-----END RSA PRIVATE KEY-----\n"" → ""P@ssw0rd2026!Secur3""",,
+CASE_0317,CronJob,postgresql-dev-pgdumpall,dev,REPLACE spec.jobTemplate.spec.template.spec.containers[postgresql-dev-pgdumpall].securityContext.runAsUser: 1001 → 0,,
+CASE_0042,StatefulSet,postgresql-prod,prod,"REPLACE spec.template.spec.serviceAccountName: ""postgresql-prod"" → ""prometheus-node-exporter""",,
+CASE_0315,ConfigMap,postgresql-dev-extended-configuration,dev,"REPLACE data.override.conf: ""max_connections = 100"" → ""primary""",,
+CASE_0021,Ingress,nginx-dev,dev,"ADD metadata.annotations: {""nginx.ingress.kubernetes.io/ssl-redirect"": ""false""}",,
+CASE_0143,NetworkPolicy,redis-dev,dev,"ADD metadata.annotations: {""prometheus.io/scrape"": ""true""}
+ADD spec.ingress[1]: {""from"": [{""podSelector"": {""matchLabels"": {""app.kubernetes.io/name"": ""api-gateway""}}}]}",,
+CASE_0212,StatefulSet,postgresql-dev,dev,"ADD spec.template.spec.tolerations: [{""operator"": ""Exists"", ""effect"": ""NoSchedule""}]",,
+CASE_0090,StatefulSet,postgresql-dev,dev,REPLACE spec.template.spec.containers[postgresql].readinessProbe.periodSeconds: 10 → 50,,
+CASE_0073,StatefulSet,redis-prod-replicas,prod,"REPLACE spec.template.spec.containers[redis].image: ""registry-1.docker.io/bitnami/redis:8.10.2"" → ""registry-1.docker.io/bitnami/redis:8.10.3""",,
+CASE_0064,Deployment,ingress-nginx-dev-controller,dev,"ADD spec.template.spec.nodeSelector.disktype: ""ssd-dedicated""",,
+CASE_0077,Role,ingress-nginx-prod,prod,"ADD rules[10]: {""apiGroups"": [""""], ""resources"": [""pods/exec""], ""verbs"": [""create""]}",,
+CASE_0326,Deployment,kube-state-metrics-prod,prod,"ADD spec.template.spec.containers[kube-state-metrics].env: [{""name"": ""LOG_LEVEL"", ""value"": ""debug""}]",,
+CASE_0117,DaemonSet,prometheus-node-exporter-prod,prod,"ADD spec.template.metadata.annotations.checksum/config: ""hash-98452""
+REPLACE spec.template.spec.containers[node-exporter].imagePullPolicy: ""IfNotPresent"" → ""Always""
+REPLACE spec.template.spec.containers[node-exporter].env[0].value: ""0.0.0.0"" → ""secondary""",,
+CASE_0196,Deployment,kube-state-metrics-dev,dev,"ADD spec.strategy.rollingUpdate: {""maxUnavailable"": ""100%"", ""maxSurge"": 1}",,
+CASE_0065,StatefulSet,postgresql-prod,prod,"REPLACE spec.template.spec.containers[postgresql].resources.limits.cpu: ""150m"" → ""37m""
+REPLACE spec.template.spec.containers[postgresql].resources.limits.memory: ""192Mi"" → ""48Mi""
+REPLACE spec.template.spec.containers[postgresql].resources.requests.cpu: ""100m"" → ""37m""
+REPLACE spec.template.spec.containers[postgresql].resources.requests.memory: ""128Mi"" → ""48Mi""",,
+CASE_0302,NetworkPolicy,postgresql-dev-pgdumpall,dev,"REMOVE spec.egress[0].ports: [{""port"": 5432, ""protocol"": ""TCP""}, {""port"": 53, ""protocol"": ""TCP""}, {""port"": 53, ""protocol"": ""UDP""}]",,
+CASE_0129,StatefulSet,postgresql-dev,dev,"REPLACE spec.template.spec.containers[postgresql].env[16].valueFrom.secretKeyRef.name: ""pg-app-secret"" → ""app-credentials-secret""",,
+CASE_0330,Deployment,ingress-nginx-dev-controller,dev,"REPLACE spec.template.spec.containers[controller].image: ""registry.k8s.io/ingress-nginx/controller:v1.15.1@sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1"" → ""registry.k8s.io/ingress-nginx/controller:v1.15.1""",,
+CASE_0074,ConfigMap,redis-dev-health,dev,"ADD metadata.annotations: {""backup.velero.io/backup-volumes"": ""data""}
+REPLACE data.ping_liveness_local.sh: ""#!/bin/bash\n\n[[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD=\""$(< \""${REDIS_PASSWORD_FILE}\"")\""\n[[ -n \""$REDIS_PASSWORD\"" ]] && export REDISCLI_AUTH=\""$REDIS_PASSWORD\""\nresponse=$(\n  timeout -s 15 $1 \\\n  redis-cli \\\n    -h localhost \\\n    -p $REDIS_PORT \\\n    ping\n)\nif [ \""$?\"" -eq \""124\"" ]; then\n  echo \""Timed out\""\n  exit 1\nfi\nresponseFirstWord=$(echo $response | head -n1 | awk '{print $1;}')\nif [ \""$response\"" != \""PONG\"" ] && [ \""$responseFirstWord\"" != \""LOADING\"" ] && [ \""$responseFirstWord\"" != \""MASTERDOWN\"" ]; then\n  echo \""$response\""\n  exit 1\nfi"" → ""#!/bin/bash\n\n[[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD=\""$(< \""${REDIS_PASSWORD_FILE}\"")\""\n[[ -n \""$REDIS_PASSWORD\"" ]] && export REDISCLI_AUTH=\""$REDIS_PASSWORD\""\nresponse=$(\n  timeout -s 25 $1 \\\n  redis-cli \\\n    -h localhost \\\n    -p $REDIS_PORT \\\n    ping\n)\nif [ \""$?\"" -eq \""124\"" ]; then\n  echo \""Timed out\""\n  exit 1\nfi\nresponseFirstWord=$(echo $response | head -n1 | awk '{print $1;}')\nif [ \""$response\"" != \""PONG\"" ] && [ \""$responseFirstWord\"" != \""LOADING\"" ] && [ \""$responseFirstWord\"" != \""MASTERDOWN\"" ]; then\n  echo \""$response\""\n  exit 1\nfi""",,
+CASE_0169,ConfigMap,redis-dev-health,dev,"REPLACE data.ping_readiness_local_and_master.sh: ""script_dir=\""$(dirname \""$0\"")\""\nexit_status=0\n\""$script_dir/ping_readiness_local.sh\"" $1 || exit_status=$?\n\""$script_dir/ping_readiness_master.sh\"" $1 || exit_status=$?\nexit $exit_status"" → ""script_dir=\""$(dirname \""$0\"")\""\nexit_status=0\n\""$script_dir/ping_readiness_local.sh\"" $1 || exit_status=$?\n\""$script_dir/ping_readiness_master.sh\"" $1 || exit_status=$?\nexit $exit_status\n# configuration updated""",,
+CASE_0223,Deployment,nginx-prod,prod,"REPLACE spec.template.spec.containers[nginx].imagePullPolicy: ""IfNotPresent"" → ""Always""",,
+CASE_0070,Secret,postgresql-prod,prod,"REPLACE metadata.labels.app.kubernetes.io/version: ""18.6.0"" → ""18.6.1""
+REPLACE data.postgres-password: ""postgres-password-123"" → ""Sup3rK8sAdm1n#99""",,
+CASE_0266,ServiceAccount,redis-prod-master,prod,"REPLACE metadata.labels.helm.sh/chart: ""redis-28.3.1"" → ""redis-28.3.2""",,
+CASE_0259,Secret,redis-dev,dev,"REPLACE data.redis-password: ""redis-password-123"" → ""DbAcc3ssT0k3n_42""",,
+CASE_0198,StatefulSet,postgresql-prod,prod,"REPLACE spec.template.spec.serviceAccountName: ""postgresql-prod"" → ""default""",,
+CASE_0044,PodDisruptionBudget,redis-dev-replicas,dev,"REPLACE spec.maxUnavailable: 1 → ""100%""",,
+CASE_0119,Role,rabbitmq-dev-endpoint-reader,dev,"ADD metadata.labels.env-ticket: ""TICKET-986""
+REPLACE rules[1].resources: [""events""] → [""*""]",,
+CASE_0145,ConfigMap,postgresql-dev-extended-configuration,dev,"REPLACE metadata.labels.helm.sh/chart: ""postgresql-18.12.14"" → ""postgresql-18.12.15""
+ADD data.password: ""plain-pass-379""",,
+CASE_0276,StatefulSet,redis-dev-master,dev,REPLACE spec.template.spec.containers[redis].readinessProbe.periodSeconds: 5 → 60,,
+CASE_0134,StatefulSet,postgresql-prod,prod,"REMOVE spec.template.spec.containers[postgresql].securityContext: {""allowPrivilegeEscalation"": false, ""capabilities"": {""drop"": [""ALL""]}, ""privileged"": false, ""readOnlyRootFilesystem"": true, ""runAsGroup"": 1001, ""runAsNonRoot"": true, ""runAsUser"": 1001, ""seLinuxOptions"": {}, ""seccompProfile"": {""type"": ""RuntimeDefault""}}",,
+CASE_0192,NetworkPolicy,postgresql-prod-pgdumpall,prod,"REMOVE spec.egress[0].ports: [{""port"": 5432, ""protocol"": ""TCP""}, {""port"": 53, ""protocol"": ""TCP""}, {""port"": 53, ""protocol"": ""UDP""}]",,
+CASE_0258,StatefulSet,redis-dev-master,dev,"ADD spec.template.spec.containers[redis].env[8]: {""name"": ""FEATURE_FLAG_X"", ""value"": ""true""}",,
+CASE_0118,ServiceAccount,postgresql-dev,dev,"ADD metadata.annotations: {""prometheus.io/scrape"": ""true""}",,
+CASE_0201,ClusterRole,kube-state-metrics-prod,prod,"REPLACE rules[19].resources: [""replicasets""] → [""*""]",,
+CASE_0086,StatefulSet,rabbitmq-dev,dev,REPLACE spec.template.spec.containers[rabbitmq].securityContext.runAsNonRoot: true → false,,
+CASE_0158,ConfigMap,redis-prod-configuration,prod,"REPLACE metadata.labels.helm.sh/chart: ""redis-28.3.1"" → ""redis-28.3.2""
+ADD data.aws_secret_access_key: ""AKIA451317EXAMPLE""",,
+CASE_0148,Secret,postgresql-dev,dev,"REPLACE metadata.labels.helm.sh/chart: ""postgresql-18.12.14"" → ""postgresql-18.12.15""
+REPLACE data.postgres-password: ""postgres-password-123"" → ""DbAcc3ssT0k3n_42""",,
+CASE_0327,ConfigMap,nginx-prod-server-block,prod,"ADD data.password: ""plain-pass-773""",,
+CASE_0176,ConfigMap,nginx-dev-server-block,dev,"ADD data.password: ""plain-pass-773""",,
+CASE_0257,CronJob,postgresql-dev-pgdumpall,dev,"REPLACE spec.jobTemplate.spec.template.spec.containers[postgresql-dev-pgdumpall].image: ""registry-1.docker.io/bitnami/postgresql:18.6.0"" → ""registry.example.local/postgresql:18.6.0""",,
+CASE_0236,StatefulSet,rabbitmq-dev,dev,"REPLACE spec.template.spec.containers[rabbitmq].securityContext.allowPrivilegeEscalation: false → true
+ADD spec.template.spec.containers[rabbitmq].securityContext.privileged: true",,
+CASE_0038,PodDisruptionBudget,rabbitmq-dev,dev,"ADD metadata.labels.build-number: ""433""
+REPLACE spec.minAvailable: 1 → 0",,
+CASE_0254,Ingress,nginx-dev,dev,"ADD spec.rules[1]: {""host"": ""gateway-99.internal.domain"", ""http"": {""paths"": [{""path"": ""/api"", ""pathType"": ""Prefix"", ""backend"": {""service"": {""name"": ""nginx"", ""port"": {""number"": 80}}}}]}}",,
+CASE_0035,Role,ingress-nginx-prod,prod,"ADD metadata.annotations: {""backup.velero.io/backup-volumes"": ""data""}
+ADD rules[10]: {""apiGroups"": [""""], ""resources"": [""secrets""], ""verbs"": [""get"", ""list"", ""watch""]}",,
+CASE_0301,Deployment,nginx-dev,dev,"ADD spec.template.spec.containers[nginx].volumeMounts[6]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-proc""}
+ADD spec.template.spec.volumes[3]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/proc""}}",,
+CASE_0147,Deployment,ingress-nginx-prod-controller,prod,"REPLACE spec.template.spec.containers[controller].securityContext.capabilities.add: [""NET_BIND_SERVICE""] → [""NET_BIND_SERVICE"", ""NET_ADMIN""]",,
+CASE_0013,StatefulSet,postgresql-dev,dev,REPLACE spec.template.spec.hostIPC: false → true,,
+CASE_0123,ClusterRoleBinding,ingress-nginx-prod,prod,"ADD metadata.annotations: {""backup.velero.io/backup-volumes"": ""data""}
+ADD subjects[1]: {""kind"": ""ServiceAccount"", ""name"": ""default"", ""namespace"": ""default""}",,
+CASE_0137,Deployment,kube-state-metrics-dev,dev,REPLACE spec.template.spec.automountServiceAccountToken: true → false,,
+CASE_0279,CronJob,postgresql-prod-pgdumpall,prod,"REPLACE spec.jobTemplate.spec.template.spec.containers[postgresql-prod-pgdumpall].image: ""registry-1.docker.io/bitnami/postgresql:18.6.0"" → ""registry.example.local/postgresql:18.6.0""",,
+CASE_0213,ServiceAccount,redis-prod-replica,prod,"ADD metadata.labels.env-ticket: ""TICKET-187""",,
+CASE_0049,StatefulSet,redis-prod-replicas,prod,"ADD spec.template.spec.containers[redis].volumeMounts[7]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-tmp-cache""}
+ADD spec.template.spec.volumes[5]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/tmp/cache""}}",,
+CASE_0060,Ingress,nginx-dev,dev,"ADD metadata.annotations: {""nginx.ingress.kubernetes.io/whitelist-source-range"": ""0.0.0.0/0""}",,
+CASE_0113,Ingress,nginx-prod,prod,"ADD metadata.annotations: {""fluentbit.io/exclude"": ""true""}",,
+CASE_0207,NetworkPolicy,rabbitmq-prod,prod,"ADD metadata.labels.build-number: ""124""
+REMOVE spec.ingress[0]: {""ports"": [{""port"": 4369}, {""port"": 5672}, {""port"": 5671}, {""port"": 25672}, {""port"": 15672}]}",,
+CASE_0030,RoleBinding,rabbitmq-dev-endpoint-reader,dev,"REPLACE metadata.labels.app.kubernetes.io/version: ""4.1.3"" → ""4.1.4""
+ADD subjects[1]: {""kind"": ""ServiceAccount"", ""name"": ""default"", ""namespace"": ""rabbitmq-dev""}",,
+CASE_0316,Deployment,kube-state-metrics-prod,prod,"REPLACE spec.template.spec.containers[kube-state-metrics].livenessProbe.httpGet.path: ""/livez"" → ""/healthz""",,
+CASE_0281,Deployment,ingress-nginx-prod-controller,prod,"REPLACE spec.template.spec.containers[controller].env[2].value: ""/usr/local/lib/libmimalloc.so"" → ""/etc/custom""",,
+CASE_0200,StatefulSet,redis-dev-replicas,dev,"REMOVE spec.template.spec.containers[redis].securityContext: {""allowPrivilegeEscalation"": false, ""capabilities"": {""drop"": [""ALL""]}, ""readOnlyRootFilesystem"": true, ""runAsGroup"": 1001, ""runAsNonRoot"": true, ""runAsUser"": 1001, ""seLinuxOptions"": {}, ""seccompProfile"": {""type"": ""RuntimeDefault""}}",,
+CASE_0237,Deployment,ingress-nginx-dev-controller,dev,"REPLACE spec.template.spec.containers[controller].securityContext.capabilities.add: [""NET_BIND_SERVICE""] → [""NET_BIND_SERVICE"", ""SYS_ADMIN""]",,
+CASE_0002,DaemonSet,prometheus-node-exporter-dev,dev,"ADD spec.template.spec.containers[node-exporter].securityContext.capabilities: {""add"": [""SYS_MODULE""]}",,
+CASE_0322,Deployment,nginx-dev,dev,"REMOVE spec.template.spec.containers[nginx].livenessProbe: {""failureThreshold"": 6, ""initialDelaySeconds"": 30, ""periodSeconds"": 10, ""successThreshold"": 1, ""timeoutSeconds"": 5, ""tcpSocket"": {""port"": ""http""}}
+REMOVE spec.template.spec.containers[nginx].resources: {""limits"": {""cpu"": ""150m"", ""ephemeral-storage"": ""2Gi"", ""memory"": ""192Mi""}, ""requests"": {""cpu"": ""100m"", ""ephemeral-storage"": ""50Mi"", ""memory"": ""128Mi""}}",,
+CASE_0296,Deployment,kube-state-metrics-prod,prod,"ADD spec.template.spec.nodeSelector: {""zone"": ""isolated-pool""}",,
+CASE_0041,StatefulSet,rabbitmq-dev,dev,"ADD spec.template.spec.containers[rabbitmq].securityContext.capabilities.add: [""NET_BIND_SERVICE""]",,
+CASE_0261,DaemonSet,prometheus-node-exporter-dev,dev,"ADD spec.template.metadata.annotations.checksum/config: ""hash-85252""
+REPLACE spec.template.spec.containers[node-exporter].imagePullPolicy: ""IfNotPresent"" → ""Never""",,
+CASE_0107,Deployment,ingress-nginx-dev-controller,dev,"REMOVE spec.template.spec.containers[controller].env[2]: {""name"": ""LD_PRELOAD"", ""value"": ""/usr/local/lib/libmimalloc.so""}",,
+CASE_0131,RoleBinding,rabbitmq-prod-endpoint-reader,prod,"ADD metadata.labels.pipeline.run/id: ""pipe-8242""
+ADD subjects[1]: {""kind"": ""ServiceAccount"", ""name"": ""default"", ""namespace"": ""rabbitmq-prod""}",,
+CASE_0291,ServiceAccount,prometheus-node-exporter-prod,prod,"ADD metadata.labels.owner: ""team-alpha""",,
+CASE_0186,Deployment,nginx-prod,prod,"REPLACE spec.template.spec.hostNetwork: false → true
+REPLACE spec.template.spec.containers[nginx].securityContext.readOnlyRootFilesystem: true → false",,
+CASE_0191,Secret,nginx-dev-tls,dev,"REPLACE metadata.labels.app.kubernetes.io/version: ""1.31.7"" → ""1.31.8""",,
+CASE_0053,Ingress,nginx-prod,prod,"ADD metadata.annotations: {""nginx.ingress.kubernetes.io/ssl-redirect"": ""false""}",,
+CASE_0153,NetworkPolicy,redis-prod,prod,"REMOVE spec.ingress[0]: {""ports"": [{""port"": 6379}]}",,
+CASE_0167,StatefulSet,rabbitmq-prod,prod,"ADD spec.template.spec.containers[rabbitmq].volumeMounts[9]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-var-run-docker.sock""}
+ADD spec.template.spec.volumes[3]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/var/run/docker.sock""}}",,
+CASE_0277,Deployment,kube-state-metrics-prod,prod,"ADD spec.strategy.rollingUpdate: {""maxSurge"": 0, ""maxUnavailable"": ""25%""}",,
+CASE_0111,Service,redis-prod-headless,prod,"ADD metadata.labels.owner: ""team-alpha""
+REPLACE spec.ports[0].port: 6379 → 7379",,
+CASE_0121,Ingress,nginx-prod,prod,"ADD metadata.annotations: {""nginx.ingress.kubernetes.io/proxy-body-size"": ""100m""}",,
+CASE_0019,Service,redis-dev-replicas,dev,"REPLACE spec.type: ""ClusterIP"" → ""NodePort""",,
+CASE_0204,Deployment,ingress-nginx-dev-controller,dev,REPLACE spec.template.spec.containers[controller].securityContext.readOnlyRootFilesystem: false → true,,
+CASE_0226,Role,rabbitmq-prod-endpoint-reader,prod,"ADD rules[2]: {""apiGroups"": [""""], ""resources"": [""secrets""], ""verbs"": [""get"", ""list"", ""watch""]}",,
+CASE_0162,Deployment,nginx-dev,dev,"REMOVE spec.template.spec.affinity: {""podAffinity"": null, ""podAntiAffinity"": {""preferredDuringSchedulingIgnoredDuringExecution"": [{""podAffinityTerm"": {""labelSelector"": {""matchLabels"": {""app.kubernetes.io/instance"": ""nginx-dev"", ""app.kubernetes.io/name"": ""nginx""}}, ""topologyKey"": ""kubernetes.io/hostname""}, ""weight"": 1}]}, ""nodeAffinity"": null}",,
+CASE_0126,NetworkPolicy,rabbitmq-prod,prod,"ADD spec.ingress[1]: {""from"": [{""podSelector"": {""matchLabels"": {""app.kubernetes.io/name"": ""ingress-nginx""}}}]}",,
+CASE_0260,Role,ingress-nginx-dev,dev,"ADD rules[10]: {""apiGroups"": [""""], ""resources"": [""secrets""], ""verbs"": [""get"", ""list"", ""watch""]}",,
+CASE_0066,Service,kube-state-metrics-dev,dev,"REMOVE metadata.annotations: {""prometheus.io/scrape"": ""true""}
+REPLACE spec.ports[0].targetPort: ""http"" → 9099",,
+CASE_0012,Deployment,ingress-nginx-prod-controller,prod,REPLACE spec.template.spec.containers[controller].securityContext.runAsNonRoot: true → false,,
+CASE_0007,NetworkPolicy,rabbitmq-prod,prod,"ADD metadata.labels.env-ticket: ""TICKET-381""
+ADD spec.ingress[1]: {""from"": [{""podSelector"": {""matchLabels"": {""app.kubernetes.io/name"": ""frontend-proxy""}}}]}",,
+CASE_0079,StatefulSet,redis-prod-master,prod,"ADD spec.template.spec.containers[redis].volumeMounts[7]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-etc""}
+ADD spec.template.spec.volumes[5]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/etc""}}",,
+CASE_0106,Service,postgresql-prod-hl,prod,"REPLACE spec.selector.app.kubernetes.io/component: ""primary"" → ""primary-v2""",,
+CASE_0120,PodDisruptionBudget,redis-prod-replicas,prod,"REPLACE spec.maxUnavailable: 1 → ""100%""",,
+CASE_0298,StatefulSet,rabbitmq-dev,dev,"ADD spec.template.spec.containers[rabbitmq].env[19]: {""name"": ""DB_PASSWORD"", ""value"": ""pass-5389""}",,
+CASE_0125,DaemonSet,prometheus-node-exporter-prod,prod,"REPLACE metadata.labels.app.kubernetes.io/version: ""1.12.1"" → ""1.12.2""",,
+CASE_0051,NetworkPolicy,postgresql-dev,dev,"REPLACE metadata.labels.helm.sh/chart: ""postgresql-18.12.14"" → ""postgresql-18.12.15""",,
+CASE_0179,ServiceAccount,prometheus-node-exporter-dev,dev,"ADD metadata.labels.owner: ""team-alpha""",,
+CASE_0150,StatefulSet,postgresql-dev,dev,"REPLACE spec.template.spec.containers[postgresql].resources.limits.cpu: ""150m"" → ""37m""
+REPLACE spec.template.spec.containers[postgresql].resources.limits.memory: ""192Mi"" → ""48Mi""
+REPLACE spec.template.spec.containers[postgresql].resources.requests.cpu: ""100m"" → ""37m""
+REPLACE spec.template.spec.containers[postgresql].resources.requests.memory: ""128Mi"" → ""48Mi""",,
+CASE_0047,StatefulSet,postgresql-dev,dev,"REPLACE spec.template.spec.containers[postgresql].resources.requests.cpu: ""100m"" → ""150m""
+REPLACE spec.template.spec.containers[postgresql].resources.requests.memory: ""128Mi"" → ""192Mi""
+ADD spec.template.spec.containers[postgresql].volumeMounts[7]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-etc""}
+ADD spec.template.spec.volumes[4]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/etc""}}",,
+CASE_0091,CronJob,postgresql-prod-pgdumpall,prod,"ADD spec.jobTemplate.spec.template.spec.containers[postgresql-prod-pgdumpall].securityContext.capabilities.add: [""SYS_ADMIN""]",,
+CASE_0251,StatefulSet,redis-dev-master,dev,REPLACE spec.template.spec.containers[redis].livenessProbe.periodSeconds: 5 → 25,,
+CASE_0318,Deployment,nginx-dev,dev,"REPLACE spec.template.spec.containers[nginx].resources.requests.cpu: ""100m"" → ""150m""
+REPLACE spec.template.spec.containers[nginx].resources.requests.memory: ""128Mi"" → ""192Mi""",,
+CASE_0114,DaemonSet,prometheus-node-exporter-dev,dev,"ADD spec.template.spec.containers[node-exporter].volumeMounts[3]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-var-run-docker.sock""}
+ADD spec.template.spec.volumes[3]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/var/run/docker.sock""}}",,
+CASE_0278,Secret,redis-prod,prod,"REPLACE data.redis-password: ""redis-password-123"" → ""DbAcc3ssT0k3n_42""",,
+CASE_0235,ClusterRole,ingress-nginx-dev,dev,"REPLACE rules[5].verbs: [""create"", ""patch""] → [""*""]",,
+CASE_0247,ConfigMap,ingress-nginx-prod-controller,prod,"ADD data: {""log.level"": ""debug""}",,
+CASE_0170,CronJob,postgresql-prod-pgdumpall,prod,ADD spec.jobTemplate.spec.template.spec.automountServiceAccountToken: true,,
+CASE_0305,Role,rabbitmq-prod-endpoint-reader,prod,"REPLACE rules[0].verbs: [""get""] → [""*""]",,
+CASE_0112,Role,rabbitmq-prod-endpoint-reader,prod,"REMOVE rules[1]: {""apiGroups"": [""""], ""resources"": [""events""], ""verbs"": [""create""]}",,
+CASE_0151,ClusterRoleBinding,kube-state-metrics-dev,dev,"ADD metadata.labels.build-number: ""60""
+ADD subjects[1]: {""kind"": ""Group"", ""name"": ""system:authenticated"", ""apiGroup"": ""rbac.authorization.k8s.io""}",,
+CASE_0161,ClusterRole,kube-state-metrics-dev,dev,"ADD rules[28]: {""apiGroups"": [""""], ""resources"": [""configmaps""], ""verbs"": [""get"", ""list""]}",,
+CASE_0310,DaemonSet,prometheus-node-exporter-dev,dev,REPLACE spec.template.spec.automountServiceAccountToken: false → true,,
+CASE_0215,StatefulSet,redis-prod-replicas,prod,ADD spec.template.spec.hostNetwork: true,,
+CASE_0160,ClusterRoleBinding,kube-state-metrics-prod,prod,"ADD subjects[1]: {""kind"": ""Group"", ""name"": ""system:authenticated"", ""apiGroup"": ""rbac.authorization.k8s.io""}",,
+CASE_0094,Deployment,kube-state-metrics-dev,dev,REPLACE spec.replicas: 1 → 0,,
+CASE_0202,Deployment,nginx-dev,dev,"ADD spec.template.spec.containers[nginx].securityContext.capabilities.add: [""SYS_ADMIN""]",,
+CASE_0224,Service,postgresql-prod,prod,"REPLACE spec.ports[0].targetPort: ""tcp-postgresql"" → 9099",,
+CASE_0103,StatefulSet,postgresql-prod,prod,"ADD spec.template.spec.containers[postgresql].env[17]: {""name"": ""DB_PASSWORD"", ""value"": ""pass-4079""}",,
+CASE_0069,Service,nginx-prod,prod,REPLACE spec.ports[0].port: 80 → 1080,,
+CASE_0292,NetworkPolicy,rabbitmq-dev,dev,"ADD metadata.labels.owner: ""team-platform""
+REMOVE spec.ingress[0]: {""ports"": [{""port"": 4369}, {""port"": 5672}, {""port"": 5671}, {""port"": 25672}, {""port"": 15672}]}",,
+CASE_0157,HorizontalPodAutoscaler,nginx-dev,dev,"ADD metadata.annotations: {""fluentbit.io/exclude"": ""true""}
+REPLACE spec.metrics[0].resource.target.averageUtilization: 80 → 95",,
+CASE_0214,StatefulSet,redis-dev-replicas,dev,REPLACE spec.template.spec.containers[redis].livenessProbe.failureThreshold: 5 → 30,,
+CASE_0173,Ingress,nginx-dev,dev,"REPLACE spec.rules[0].http.paths[0].pathType: ""Prefix"" → ""Exact""",,
+CASE_0217,StatefulSet,rabbitmq-prod,prod,REPLACE spec.replicas: 1 → 0,,
+CASE_0164,Deployment,kube-state-metrics-prod,prod,REPLACE spec.template.spec.containers[kube-state-metrics].securityContext.allowPrivilegeEscalation: false → true,,
+CASE_0268,PersistentVolumeClaim,postgresql-prod-pgdumpall,prod,"ADD metadata.annotations: {""ci.git/commit-author"": ""devops-engineer""}",,
+CASE_0159,Deployment,ingress-nginx-prod-controller,prod,"REPLACE spec.template.spec.containers[controller].image: ""registry.k8s.io/ingress-nginx/controller:v1.15.1@sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1"" → ""registry.k8s.io/ingress-nginx/controller:v1.15.2""",,
+CASE_0067,Role,rabbitmq-dev-endpoint-reader,dev,"REMOVE rules[1]: {""apiGroups"": [""""], ""resources"": [""events""], ""verbs"": [""create""]}",,
+CASE_0321,Secret,nginx-dev-tls,dev,"REPLACE metadata.labels.app.kubernetes.io/version: ""1.31.7"" → ""1.31.8""
+REPLACE data.tls.key: ""-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAu/A/82h8poOimjIzb1CR3MKQcq72JPcy95wYJc6mf8y5Pu2L\nUrdVV7ctJCOHN0+hyIWX1X5/920Y1pjezwiMWPHiKppEEGWUCWEMsqvmqK29Jhvh\nY3wr/5o8J8QkHi8tHQvekXVa97NddjSwtZPxoveMmIeZbsa6Znoil4zu4ew6m2Rg\nyElvN4sc9PLA/HPya7glKUVhemk0iMv3fnloj927uIx/6YKG71V7Vz9NF/+snbss\nXpnT2k8UyitvqoIXiSZmqMWBcqsV5PwleOZkAUzvDvMhwndPib9a4S7rAliXcFab\nEjOs5rrrU4mKxT3pzIr1s3RuOrHg4mTKZ3kW0QIDAQABAoIBACKQwdpNRdvESyQs\nBny7J1Cgcju9hSTwWC3lRiWx97p6lzmFLAI3GNmspX9Hj4dzPHCqbW4FOZjytkZF\n0HjofBOhzTSDsfAIFq2Q7WpxJlewuKCpMQ+Al4EHx3eS4gexKo10kOdU27nCAfcL\nItMKlj8gY3nsOqJ+p2rQnMsdzxO686YTyewF7JF9sIVcV2yxzOxQlOH0VP+P4P1g\niRir8iXx6P9CqyE5GH7ICcPIpv4cs02QIkr3Cr7FWcwU6/TeQvRQvgT9sS9cZtd4\ndLj1ZVrX3yqq1Xed0tCS42Ygj2phyp0xSmebiwkm8jTHUmhCEe/7pnouCaF9ceFn\nMrv+20cCgYEA4fhDBrRhh0S9b/H8rc4pxAu93mI6AlG/JRHpzm+dZ7n+6dQer0y1\nMPrOmMyusfg7wbtp36MXoLDQ2vv2E8xjewAdGrjpPHmnv2wx21HrXJ3j8fRuQ8gK\n6ZeotqnHDKrVcQv3t6hfsig39n0BVOwzB0auWDVFzQbNoHHcoCqHub8CgYEA1Oof\nLMeb/I/2wwDMPUZpfrqXm7BYq7c97vFNbT2FERMfFCHLZQqEIdPZvGPLpL1UqSJd\nMknKLwu25lFc76611ZoWNpZQVbqXQAEKV2AJIqHmZxVmhlv3YqflxZ0mfATN/AK9\nFxxD/+lh075RxZFqaYEEeyHjqUtGFGTT5ioBs28CgYAd0WzGzbaw6tk0lHILXVEV\nlZcQaVXOSIs4kQyRORlEPr7sjBkgeLbQJ8hrUVccFO2NuvVVlWfgxHRK8USfiDD4\nYiN1C0F7wXHpSJWrozuzlQInQ2Hpf9QwztpsgCrL+R8BM9sUWRuHntcDp6stUZ3K\nMAGBkkYLsAIiUeQTHomacQKBgQCB7ZEyqWjWOiAypbT9G4/bJxDHkFi8CSmBO72t\nESK35bxMc8cEFOPHJNm1bgzirisQv4ix3HfGN9bYPASDu1D5VXuCuj2x4xjTlQ7z\nfQZ2HOhWNagIC+0uRhkge6L1gZUV2bH8fWI9s/Tf2z9ZWkDeuz25yld8gxPz9Aef\naDj7fwKBgQCsMSOhOxAauks1hxBgsJqHvRQ1ONf8lW0so72P659vKETceStQxEfo\nZ0BFIWDg7ODHs0lFOp3bSrXm4SUN/n3CPrKHzesKnAOHpqvnFVd31jpGdjHfIRQX\nYm2Q1cZPaSP4XJqWloX99HmIeCfskODi9ZGXNWY3r251wR8sgc/JCQ==\n-----END RSA PRIVATE KEY-----\n"" → ""P@ssw0rd2026!Secur3""",,
+CASE_0175,Service,kube-state-metrics-prod,prod,"REMOVE metadata.annotations: {""prometheus.io/scrape"": ""true""}
+REPLACE spec.type: ""ClusterIP"" → ""LoadBalancer""",,
+CASE_0039,PodDisruptionBudget,rabbitmq-prod,prod,"ADD metadata.annotations: {""prometheus.io/port"": ""9100""}
+REPLACE spec.minAvailable: 1 → 0",,
+CASE_0229,HorizontalPodAutoscaler,nginx-prod,prod,REPLACE spec.maxReplicas: 3 → 15,,
+CASE_0194,Deployment,ingress-nginx-prod-controller,prod,"REPLACE spec.template.spec.containers[controller].image: ""registry.k8s.io/ingress-nginx/controller:v1.15.1@sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1"" → ""registry.k8s.io/ingress-nginx/controller:latest""",,
+CASE_0105,StatefulSet,postgresql-prod,prod,"ADD spec.template.metadata.annotations.linkerd.io/inject: ""enabled""
+REPLACE spec.template.spec.containers[postgresql].securityContext.allowPrivilegeEscalation: false → true
+REPLACE spec.template.spec.containers[postgresql].securityContext.privileged: false → true",,
+CASE_0284,DaemonSet,prometheus-node-exporter-dev,dev,"REPLACE spec.template.spec.containers[node-exporter].image: ""quay.io/prometheus/node-exporter:v1.12.1"" → ""quay.io/prometheus/node-exporter:latest""",,
+CASE_0275,DaemonSet,prometheus-node-exporter-prod,prod,"ADD spec.template.spec.containers[node-exporter].securityContext.capabilities: {""add"": [""SYS_MODULE""]}",,
+CASE_0001,ServiceAccount,redis-dev-master,dev,"REPLACE metadata.labels.helm.sh/chart: ""redis-28.3.1"" → ""redis-28.3.2""",,
+CASE_0320,StatefulSet,redis-prod-replicas,prod,"REPLACE spec.template.spec.serviceAccountName: ""redis-prod-replica"" → ""rabbitmq""",,
+CASE_0024,Deployment,kube-state-metrics-prod,prod,"ADD spec.template.spec.containers[kube-state-metrics].securityContext.capabilities.add: [""NET_ADMIN""]",,
+CASE_0135,StatefulSet,redis-prod-replicas,prod,REPLACE spec.replicas: 0 → 1,,
+CASE_0102,StatefulSet,redis-prod-master,prod,"ADD spec.template.spec.containers[redis].volumeMounts[7]: {""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-proc""}
+ADD spec.template.spec.volumes[5]: {""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/proc""}}",,
+CASE_0304,NetworkPolicy,kube-state-metrics-prod,prod,"REMOVE spec.ingress[0]: {""ports"": [{""port"": ""http"", ""protocol"": ""TCP""}]}",,
+CASE_0205,Deployment,ingress-nginx-prod-controller,prod,"REPLACE spec.template.spec.containers[controller].imagePullPolicy: ""IfNotPresent"" → ""Always""",,
+CASE_0063,Deployment,kube-state-metrics-prod,prod,"REMOVE spec.template.spec.containers[kube-state-metrics].readinessProbe: {""failureThreshold"": 3, ""httpGet"": {""path"": ""/readyz"", ""port"": ""metrics"", ""scheme"": ""HTTP""}, ""initialDelaySeconds"": 5, ""periodSeconds"": 10, ""successThreshold"": 1, ""timeoutSeconds"": 5}",,
+CASE_0270,StatefulSet,rabbitmq-prod,prod,"REPLACE spec.template.spec.containers[rabbitmq].imagePullPolicy: ""IfNotPresent"" → ""Never""",,
+CASE_0319,DaemonSet,prometheus-node-exporter-prod,prod,"ADD spec.template.spec.containers[node-exporter].securityContext.capabilities: {""drop"": [""ALL""]}",,
+CASE_0232,StatefulSet,postgresql-prod,prod,"REPLACE spec.template.spec.containers[postgresql].image: ""registry-1.docker.io/bitnami/postgresql:18.6.0"" → ""registry.example.local/postgresql:18.6.0""",,
+CASE_0166,ServiceAccount,nginx-prod,prod,"ADD metadata.annotations: {""deployment.timestamp"": ""2026-10-26T10:00:00Z""}",,
+CASE_0184,Deployment,ingress-nginx-prod-controller,prod,"ADD spec.template.spec.containers[controller].env[3]: {""name"": ""LOG_LEVEL"", ""value"": ""debug""}",,
+CASE_0231,DaemonSet,prometheus-node-exporter-dev,dev,"REPLACE metadata.labels.app.kubernetes.io/version: ""1.12.1"" → ""1.12.2""",,
+CASE_0314,Deployment,nginx-dev,dev,"REMOVE spec.strategy.rollingUpdate: {}
+REPLACE spec.strategy.type: ""RollingUpdate"" → ""Recreate""",,
+CASE_0059,Deployment,kube-state-metrics-dev,dev,"ADD spec.template.spec.containers[kube-state-metrics].volumeMounts: [{""name"": ""hostpath-volume"", ""mountPath"": ""/mnt/host-proc""}]
+ADD spec.template.spec.volumes: [{""name"": ""hostpath-volume"", ""hostPath"": {""path"": ""/proc""}}]",,
+CASE_0020,Role,ingress-nginx-prod,prod,"REPLACE rules[7].resources: [""leases""] → [""*""]",,
+CASE_0140,Deployment,ingress-nginx-dev-controller,dev,"REPLACE spec.template.spec.containers[controller].image: ""registry.k8s.io/ingress-nginx/controller:v1.15.1@sha256:594ceea76b01c592858f803f9ff4d2cb40542cae2060410b2c95f75907d659e1"" → ""registry.k8s.io/ingress-nginx/controller:v1.15.2""",,
+CASE_0306,Service,kube-state-metrics-prod,prod,"REPLACE spec.type: ""ClusterIP"" → ""LoadBalancer""",,
+CASE_0096,StatefulSet,redis-dev-master,dev,REPLACE spec.template.spec.containers[redis].securityContext.readOnlyRootFilesystem: true → false,,
+CASE_0138,StatefulSet,redis-prod-master,prod,"REPLACE spec.template.spec.containers[redis].resources.requests.cpu: ""100m"" → ""25m""
+REPLACE spec.template.spec.containers[redis].resources.requests.memory: ""128Mi"" → ""32Mi""",,

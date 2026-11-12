@@ -1,0 +1,42 @@
+{
+  "case_id": "CASE_0144",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "kube-state-metrics",
+  "chart": "prometheus-community/kube-state-metrics",
+  "chart_version": "8.6.0",
+  "resource_kind": "Deployment",
+  "resource_name": "kube-state-metrics-prod",
+  "namespace": "kube-state-metrics-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-META-PODANNOT-ADD",
+    "MUT-SC-RUN-AS-ROOT",
+    "MUT-POD-AUTOMOUNT"
+  ],
+  "operator_params": [
+    {
+      "param": "sidecar.istio.io/inject",
+      "key": "sidecar.istio.io/inject",
+      "value": "true"
+    },
+    {
+      "param": "runAsUser_0",
+      "value": 0,
+      "container": "kube-state-metrics",
+      "runAsUser": 0
+    },
+    {
+      "param": "false",
+      "value": false,
+      "automount": false
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

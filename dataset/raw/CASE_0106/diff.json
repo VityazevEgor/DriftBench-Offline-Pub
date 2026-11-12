@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/selector/app.kubernetes.io~1component",
+    "old": "primary",
+    "new": "primary-v2"
+  }
+]

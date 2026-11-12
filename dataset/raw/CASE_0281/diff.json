@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/env/2/value",
+    "old": "/usr/local/lib/libmimalloc.so",
+    "new": "/etc/custom"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/containers/0/env/8",
+    "old": {
+      "name": "POSTGRESQL_ENABLE_LDAP",
+      "value": "no"
+    },
+    "new": null
+  }
+]

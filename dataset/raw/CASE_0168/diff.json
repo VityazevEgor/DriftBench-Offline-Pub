@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/data/postgres-password",
+    "old": "cG9zdGdyZXMtcGFzc3dvcmQtMTIz",
+    "new": "UEBzc3cwcmQyMDI2IVNlY3VyMw=="
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/selector/app.kubernetes.io~1name",
+    "old": "rabbitmq",
+    "new": "rabbitmq-v2"
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/env/8",
+    "old": null,
+    "new": {
+      "name": "FEATURE_FLAG_X",
+      "value": "true"
+    }
+  }
+]

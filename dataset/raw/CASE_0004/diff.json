@@ -1,0 +1,11 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/env/10",
+    "old": null,
+    "new": {
+      "name": "API_TOKEN",
+      "value": "tok-7338"
+    }
+  }
+]

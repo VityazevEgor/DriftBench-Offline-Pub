@@ -1,0 +1,41 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/securityContext/runAsNonRoot",
+    "old": null,
+    "new": true
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/securityContext/runAsUser",
+    "old": null,
+    "new": 10001
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/env/1",
+    "old": null,
+    "new": {
+      "name": "DB_PASSWORD",
+      "value": "pass-1256"
+    }
+  },
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/containers/0/livenessProbe",
+    "old": {
+      "failureThreshold": 3,
+      "httpGet": {
+        "httpHeaders": null,
+        "path": "/",
+        "port": "metrics",
+        "scheme": "HTTP"
+      },
+      "initialDelaySeconds": 0,
+      "periodSeconds": 10,
+      "successThreshold": 1,
+      "timeoutSeconds": 1
+    },
+    "new": null
+  }
+]

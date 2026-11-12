@@ -1,0 +1,30 @@
+{
+  "case_id": "CASE_0086",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "rabbitmq",
+  "chart": "bitnami/rabbitmq",
+  "chart_version": "16.0.14",
+  "resource_kind": "StatefulSet",
+  "resource_name": "rabbitmq-dev",
+  "namespace": "rabbitmq-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-SC-RUN-AS-ROOT"
+  ],
+  "operator_params": [
+    {
+      "param": "runAsNonRoot_false",
+      "value": false,
+      "container": "rabbitmq",
+      "runAsNonRoot": false
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

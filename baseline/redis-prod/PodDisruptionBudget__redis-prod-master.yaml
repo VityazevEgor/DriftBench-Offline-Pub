@@ -1,0 +1,20 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: redis-prod-master
+  namespace: redis-prod
+  labels:
+    app.kubernetes.io/instance: redis-prod
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/version: 8.10.2
+    helm.sh/chart: redis-28.3.1
+    app.kubernetes.io/component: master
+    environment: prod
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: redis-prod
+      app.kubernetes.io/name: redis
+      app.kubernetes.io/component: master

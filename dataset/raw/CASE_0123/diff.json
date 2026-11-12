@@ -1,0 +1,20 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/annotations",
+    "old": null,
+    "new": {
+      "backup.velero.io/backup-volumes": "data"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/subjects/1",
+    "old": null,
+    "new": {
+      "kind": "ServiceAccount",
+      "name": "default",
+      "namespace": "default"
+    }
+  }
+]

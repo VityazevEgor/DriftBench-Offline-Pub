@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/owner",
+    "old": null,
+    "new": "team-alpha"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/ports/0/port",
+    "old": 6379,
+    "new": 7379
+  }
+]

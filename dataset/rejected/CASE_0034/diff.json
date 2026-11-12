@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/build-number",
+    "old": null,
+    "new": "55"
+  },
+  {
+    "op": "replace",
+    "path": "/roleRef/name",
+    "old": "ingress-nginx-prod",
+    "new": "cluster-admin"
+  }
+]

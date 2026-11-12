@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/readOnlyRootFilesystem",
+    "old": true,
+    "new": false
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/env/8/value",
+    "old": "no",
+    "new": "true"
+  }
+]

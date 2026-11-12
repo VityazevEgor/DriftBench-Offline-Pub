@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0266",
+  "case_type": "paired",
+  "pair_id": "PAIR_050",
+  "app": "redis",
+  "chart": "bitnami/redis",
+  "chart_version": "28.3.1",
+  "resource_kind": "ServiceAccount",
+  "resource_name": "redis-prod-master",
+  "namespace": "redis-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-META-LABEL-CHANGE"
+  ],
+  "operator_params": [
+    {
+      "param": "change_val",
+      "key": "helm.sh/chart",
+      "value": "redis-28.3.2"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

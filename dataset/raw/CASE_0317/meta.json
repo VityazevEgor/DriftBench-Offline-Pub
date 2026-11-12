@@ -1,0 +1,30 @@
+{
+  "case_id": "CASE_0317",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "postgresql",
+  "chart": "bitnami/postgresql",
+  "chart_version": "18.12.14",
+  "resource_kind": "CronJob",
+  "resource_name": "postgresql-dev-pgdumpall",
+  "namespace": "postgresql-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-SC-RUN-AS-ROOT"
+  ],
+  "operator_params": [
+    {
+      "param": "runAsUser_0",
+      "value": 0,
+      "container": "postgresql-dev-pgdumpall",
+      "runAsUser": 0
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

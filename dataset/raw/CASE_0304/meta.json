@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0304",
+  "case_type": "paired",
+  "pair_id": "PAIR_035",
+  "app": "kube-state-metrics",
+  "chart": "prometheus-community/kube-state-metrics",
+  "chart_version": "8.6.0",
+  "resource_kind": "NetworkPolicy",
+  "resource_name": "kube-state-metrics-prod",
+  "namespace": "kube-state-metrics-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-NP-RULE-REMOVE"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "direction": "ingress",
+      "index": 0
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

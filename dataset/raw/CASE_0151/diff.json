@@ -1,0 +1,18 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/build-number",
+    "old": null,
+    "new": "60"
+  },
+  {
+    "op": "add",
+    "path": "/subjects/1",
+    "old": null,
+    "new": {
+      "kind": "Group",
+      "name": "system:authenticated",
+      "apiGroup": "rbac.authorization.k8s.io"
+    }
+  }
+]

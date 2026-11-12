@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-prod-replicas
+  namespace: redis-prod
+  labels:
+    app.kubernetes.io/instance: redis-prod
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/version: 8.10.2
+    helm.sh/chart: redis-28.3.1
+    app.kubernetes.io/component: replica
+    environment: prod
+spec:
+  type: NodePort
+  internalTrafficPolicy: Cluster
+  ports:
+  - name: tcp-redis
+    port: 6379
+    targetPort: redis
+    nodePort: null
+  selector:
+    app.kubernetes.io/instance: redis-prod
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/component: replica

@@ -1,0 +1,23 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: redis-dev
+  namespace: redis-dev
+  labels:
+    app.kubernetes.io/instance: redis-dev
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/version: 8.10.2
+    helm.sh/chart: redis-28.3.1
+    environment: dev
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/instance: redis-dev
+      app.kubernetes.io/name: redis
+  policyTypes:
+  - Ingress
+  - Egress
+  egress:
+  - {}
+  ingress: []

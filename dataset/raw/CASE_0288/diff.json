@@ -1,0 +1,11 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/annotations",
+    "old": null,
+    "new": {
+      "nginx.ingress.kubernetes.io/proxy-body-size": "100m",
+      "ci.git/commit-author": "devops-engineer"
+    }
+  }
+]

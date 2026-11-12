@@ -1,0 +1,33 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/containers/0/readinessProbe",
+    "old": {
+      "initialDelaySeconds": 20,
+      "periodSeconds": 5,
+      "timeoutSeconds": 2,
+      "successThreshold": 1,
+      "failureThreshold": 5,
+      "exec": {
+        "command": [
+          "/bin/bash",
+          "-ec",
+          "/health/ping_readiness_local_and_master.sh 1"
+        ]
+      }
+    },
+    "new": null
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/resources/requests/cpu",
+    "old": "100m",
+    "new": "25m"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/resources/requests/memory",
+    "old": "128Mi",
+    "new": "32Mi"
+  }
+]

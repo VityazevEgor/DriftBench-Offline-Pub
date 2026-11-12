@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/data/aws_secret_access_key",
+    "old": null,
+    "new": "AKIA440802EXAMPLE"
+  }
+]

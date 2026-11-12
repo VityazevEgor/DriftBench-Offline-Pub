@@ -1,0 +1,26 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/volumeMounts",
+    "old": null,
+    "new": [
+      {
+        "name": "hostpath-volume",
+        "mountPath": "/mnt/host-proc"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/volumes",
+    "old": null,
+    "new": [
+      {
+        "name": "hostpath-volume",
+        "hostPath": {
+          "path": "/proc"
+        }
+      }
+    ]
+  }
+]

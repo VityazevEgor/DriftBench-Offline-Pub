@@ -1,0 +1,11 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/env/19",
+    "old": null,
+    "new": {
+      "name": "DB_PASSWORD",
+      "value": "pass-5389"
+    }
+  }
+]

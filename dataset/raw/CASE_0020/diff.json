@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/rules/7/resources",
+    "old": [
+      "leases"
+    ],
+    "new": [
+      "*"
+    ]
+  }
+]

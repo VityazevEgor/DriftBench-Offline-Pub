@@ -1,0 +1,26 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/metadata/annotations/linkerd.io~1inject",
+    "old": null,
+    "new": "enabled"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/allowPrivilegeEscalation",
+    "old": false,
+    "new": true
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/privileged",
+    "old": false,
+    "new": true
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/env/16/valueFrom/secretKeyRef/name",
+    "old": "pg-app-secret",
+    "new": "app-credentials-secret"
+  }
+]

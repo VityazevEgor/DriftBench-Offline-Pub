@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-prod-server-block
+  namespace: nginx-prod
+  labels:
+    app.kubernetes.io/instance: nginx-prod
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/version: 1.31.7
+    helm.sh/chart: nginx-25.2.5
+    environment: prod
+data:
+  server-block.conf: "server {\n  listen 8080;\n  location / {\n    return 200 \"\
+    OK\";\n  }\n}"
+  password: plain-pass-773

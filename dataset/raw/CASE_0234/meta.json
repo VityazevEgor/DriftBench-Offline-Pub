@@ -1,0 +1,35 @@
+{
+  "case_id": "CASE_0234",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "nginx",
+  "chart": "bitnami/nginx",
+  "chart_version": "25.2.5",
+  "resource_kind": "PodDisruptionBudget",
+  "resource_name": "nginx-dev",
+  "namespace": "nginx-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-SCALE-PDB",
+    "MUT-META-ANNOT-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "minAvailable_0",
+      "value": 0,
+      "minAvailable": 0
+    },
+    {
+      "param": "deployment.timestamp",
+      "key": "deployment.timestamp",
+      "value": "2026-10-22T10:00:00Z"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/metadata/labels/helm.sh~1chart",
+    "old": "postgresql-18.12.14",
+    "new": "postgresql-18.12.15"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/selector/app.kubernetes.io~1instance",
+    "old": "postgresql-prod",
+    "new": "postgresql-prod-v2"
+  }
+]

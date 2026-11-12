@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/metadata/annotations/linkerd.io~1inject",
+    "old": null,
+    "new": "enabled"
+  }
+]

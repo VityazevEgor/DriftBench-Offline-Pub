@@ -1,0 +1,34 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/resources/requests/cpu",
+    "old": "100m",
+    "new": "150m"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/resources/requests/memory",
+    "old": "128Mi",
+    "new": "192Mi"
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/volumeMounts/7",
+    "old": null,
+    "new": {
+      "name": "hostpath-volume",
+      "mountPath": "/mnt/host-etc"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/volumes/4",
+    "old": null,
+    "new": {
+      "name": "hostpath-volume",
+      "hostPath": {
+        "path": "/etc"
+      }
+    }
+  }
+]

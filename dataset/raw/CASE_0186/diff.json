@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/hostNetwork",
+    "old": false,
+    "new": true
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/readOnlyRootFilesystem",
+    "old": true,
+    "new": false
+  }
+]

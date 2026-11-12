@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/runAsUser",
+    "old": 101,
+    "new": 10001
+  }
+]

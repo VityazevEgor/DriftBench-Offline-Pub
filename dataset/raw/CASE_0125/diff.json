@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/metadata/labels/app.kubernetes.io~1version",
+    "old": "1.12.1",
+    "new": "1.12.2"
+  }
+]

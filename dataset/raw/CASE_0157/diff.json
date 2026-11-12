@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/annotations",
+    "old": null,
+    "new": {
+      "fluentbit.io/exclude": "true"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/spec/metrics/0/resource/target/averageUtilization",
+    "old": 80,
+    "new": 95
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "case_id": "CASE_0155",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "redis",
+  "chart": "bitnami/redis",
+  "chart_version": "28.3.1",
+  "resource_kind": "StatefulSet",
+  "resource_name": "redis-dev-master",
+  "namespace": "redis-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-RES-LIMITS"
+  ],
+  "operator_params": [
+    {
+      "param": "x0.25",
+      "container": "redis",
+      "limits": {
+        "cpu": "37m",
+        "ephemeral-storage": "2Gi",
+        "memory": "48Mi"
+      },
+      "requests": {
+        "cpu": "37m",
+        "ephemeral-storage": "50Mi",
+        "memory": "48Mi"
+      }
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

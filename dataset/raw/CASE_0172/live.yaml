@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: redis-prod
+  namespace: redis-prod
+  labels:
+    app.kubernetes.io/instance: redis-prod
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/version: 8.10.2
+    helm.sh/chart: redis-28.3.1
+    environment: prod
+    pipeline.run/id: pipe-5837
+type: Opaque
+data:
+  redis-password: U3VwM3JLOHNBZG0xbiM5OQ==

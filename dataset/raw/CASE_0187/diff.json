@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/allowPrivilegeEscalation",
+    "old": false,
+    "new": true
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/privileged",
+    "old": false,
+    "new": true
+  }
+]

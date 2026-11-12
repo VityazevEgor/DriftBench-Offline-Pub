@@ -1,0 +1,21 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: redis-dev-master
+  namespace: redis-dev
+  labels:
+    app.kubernetes.io/instance: redis-dev
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/version: 8.10.2
+    helm.sh/chart: redis-28.3.1
+    app.kubernetes.io/component: master
+    environment: dev
+    pipeline.run/id: pipe-4555
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: redis-dev
+      app.kubernetes.io/name: redis
+      app.kubernetes.io/component: master
+  maxUnavailable: 100%

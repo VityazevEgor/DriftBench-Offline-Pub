@@ -1,0 +1,30 @@
+{
+  "case_id": "CASE_0164",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "kube-state-metrics",
+  "chart": "prometheus-community/kube-state-metrics",
+  "chart_version": "8.6.0",
+  "resource_kind": "Deployment",
+  "resource_name": "kube-state-metrics-prod",
+  "namespace": "kube-state-metrics-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-SC-ALLOW-ESC"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "value": true,
+      "container": "kube-state-metrics",
+      "allowPrivilegeEscalation": true
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

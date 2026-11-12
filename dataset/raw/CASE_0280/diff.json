@@ -1,0 +1,10 @@
+[
+  {
+    "op": "remove",
+    "path": "/metadata/annotations",
+    "old": {
+      "prometheus.io/scrape": "true"
+    },
+    "new": null
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/serviceAccountName",
+    "old": "nginx-dev",
+    "new": "default"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/runAsUser",
+    "old": 1001,
+    "new": 10001
+  }
+]

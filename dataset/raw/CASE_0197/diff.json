@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/replicas",
+    "old": 1,
+    "new": 0
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/securityContext/allowPrivilegeEscalation",
+    "old": false,
+    "new": true
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "case_id": "CASE_0157",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "nginx",
+  "chart": "bitnami/nginx",
+  "chart_version": "25.2.5",
+  "resource_kind": "HorizontalPodAutoscaler",
+  "resource_name": "nginx-dev",
+  "namespace": "nginx-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-SCALE-HPA",
+    "MUT-META-ANNOT-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "target_cpu_95",
+      "metricIndex": 0,
+      "averageUtilization": 95
+    },
+    {
+      "param": "fluentbit.io/exclude",
+      "key": "fluentbit.io/exclude",
+      "value": "true"
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

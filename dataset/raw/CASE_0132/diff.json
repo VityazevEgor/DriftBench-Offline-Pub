@@ -1,0 +1,18 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/annotations",
+    "old": null,
+    "new": {
+      "prometheus.io/port": "9100"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/data",
+    "old": null,
+    "new": {
+      "log.level": "debug"
+    }
+  }
+]

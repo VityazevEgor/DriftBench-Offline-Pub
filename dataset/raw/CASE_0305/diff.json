@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/rules/0/verbs",
+    "old": [
+      "get"
+    ],
+    "new": [
+      "*"
+    ]
+  }
+]

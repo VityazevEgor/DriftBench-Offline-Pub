@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0085",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "redis",
+  "chart": "bitnami/redis",
+  "chart_version": "28.3.1",
+  "resource_kind": "StatefulSet",
+  "resource_name": "redis-dev-master",
+  "namespace": "redis-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-WL-PULLPOLICY"
+  ],
+  "operator_params": [
+    {
+      "param": "Never",
+      "container": "redis",
+      "value": "Never"
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

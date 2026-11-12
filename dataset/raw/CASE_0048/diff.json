@@ -1,0 +1,32 @@
+[
+  {
+    "op": "replace",
+    "path": "/metadata/labels/app.kubernetes.io~1version",
+    "old": "1.31.7",
+    "new": "1.31.8"
+  },
+  {
+    "op": "add",
+    "path": "/spec/rules/1",
+    "old": null,
+    "new": {
+      "host": "gateway-58.internal.domain",
+      "http": {
+        "paths": [
+          {
+            "path": "/api",
+            "pathType": "Prefix",
+            "backend": {
+              "service": {
+                "name": "nginx",
+                "port": {
+                  "number": 80
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+]

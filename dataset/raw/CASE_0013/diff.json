@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/hostIPC",
+    "old": false,
+    "new": true
+  }
+]

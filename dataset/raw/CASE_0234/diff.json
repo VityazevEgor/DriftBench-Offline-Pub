@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/annotations",
+    "old": null,
+    "new": {
+      "deployment.timestamp": "2026-10-22T10:00:00Z"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/spec/minAvailable",
+    "old": 1,
+    "new": 0
+  }
+]

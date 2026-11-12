@@ -1,0 +1,26 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/rules/1",
+    "old": null,
+    "new": {
+      "host": "gateway-99.internal.domain",
+      "http": {
+        "paths": [
+          {
+            "path": "/api",
+            "pathType": "Prefix",
+            "backend": {
+              "service": {
+                "name": "nginx",
+                "port": {
+                  "number": 80
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+]

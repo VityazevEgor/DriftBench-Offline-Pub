@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/pipeline.run~1id",
+    "old": null,
+    "new": "pipe-5837"
+  },
+  {
+    "op": "replace",
+    "path": "/data/redis-password",
+    "old": "cmVkaXMtcGFzc3dvcmQtMTIz",
+    "new": "U3VwM3JLOHNBZG0xbiM5OQ=="
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/securityContext/capabilities/add",
+    "old": null,
+    "new": [
+      "SYS_ADMIN"
+    ]
+  }
+]

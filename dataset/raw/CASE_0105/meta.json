@@ -1,0 +1,37 @@
+{
+  "case_id": "CASE_0105",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "postgresql",
+  "chart": "bitnami/postgresql",
+  "chart_version": "18.12.14",
+  "resource_kind": "StatefulSet",
+  "resource_name": "postgresql-prod",
+  "namespace": "postgresql-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-META-PODANNOT-ADD",
+    "MUT-SC-PRIVILEGED"
+  ],
+  "operator_params": [
+    {
+      "param": "linkerd.io/inject",
+      "key": "linkerd.io/inject",
+      "value": "enabled"
+    },
+    {
+      "param": "default",
+      "value": true,
+      "container": "postgresql",
+      "privileged": true,
+      "allowPrivilegeEscalation": true
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

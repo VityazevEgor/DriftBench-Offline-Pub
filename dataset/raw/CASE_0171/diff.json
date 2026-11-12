@@ -1,0 +1,18 @@
+[
+  {
+    "op": "add",
+    "path": "/rules/9",
+    "old": null,
+    "new": {
+      "apiGroups": [
+        ""
+      ],
+      "resources": [
+        "pods/exec"
+      ],
+      "verbs": [
+        "create"
+      ]
+    }
+  }
+]

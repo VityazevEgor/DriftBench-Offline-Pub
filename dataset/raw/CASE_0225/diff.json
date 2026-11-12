@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/rules/19/resources",
+    "old": [
+      "replicasets"
+    ],
+    "new": [
+      "*"
+    ]
+  }
+]

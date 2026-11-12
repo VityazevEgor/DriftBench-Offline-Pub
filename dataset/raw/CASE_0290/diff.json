@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/livenessProbe/timeoutSeconds",
+    "old": 5,
+    "new": 15
+  }
+]

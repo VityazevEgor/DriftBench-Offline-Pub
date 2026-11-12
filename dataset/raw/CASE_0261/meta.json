@@ -1,0 +1,35 @@
+{
+  "case_id": "CASE_0261",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "prometheus-node-exporter",
+  "chart": "prometheus-community/prometheus-node-exporter",
+  "chart_version": "4.60.0",
+  "resource_kind": "DaemonSet",
+  "resource_name": "prometheus-node-exporter-dev",
+  "namespace": "prometheus-node-exporter-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-WL-PULLPOLICY",
+    "MUT-META-PODANNOT-ADD"
+  ],
+  "operator_params": [
+    {
+      "param": "Never",
+      "container": "node-exporter",
+      "value": "Never"
+    },
+    {
+      "param": "checksum/config",
+      "key": "checksum/config",
+      "value": "hash-85252"
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

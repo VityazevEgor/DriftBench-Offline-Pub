@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/owner",
+    "old": null,
+    "new": "team-infrastructure"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/maxReplicas",
+    "old": 3,
+    "new": 15
+  }
+]

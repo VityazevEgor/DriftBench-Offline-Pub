@@ -1,0 +1,26 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/annotations",
+    "old": null,
+    "new": {
+      "prometheus.io/port": "9100"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/spec/ingress/1",
+    "old": null,
+    "new": {
+      "from": [
+        {
+          "podSelector": {
+            "matchLabels": {
+              "app.kubernetes.io/name": "monitoring"
+            }
+          }
+        }
+      ]
+    }
+  }
+]

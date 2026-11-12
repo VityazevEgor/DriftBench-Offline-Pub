@@ -1,0 +1,31 @@
+{
+  "case_id": "CASE_0225",
+  "case_type": "paired",
+  "pair_id": "PAIR_014",
+  "app": "kube-state-metrics",
+  "chart": "prometheus-community/kube-state-metrics",
+  "chart_version": "8.6.0",
+  "resource_kind": "ClusterRole",
+  "resource_name": "kube-state-metrics-dev",
+  "namespace": "kube-state-metrics-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-RBAC-RES-WILDCARD"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "index": 19,
+      "resources": [
+        "*"
+      ]
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

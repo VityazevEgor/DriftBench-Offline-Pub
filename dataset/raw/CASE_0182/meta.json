@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0182",
+  "case_type": "paired",
+  "pair_id": "PAIR_037",
+  "app": "rabbitmq",
+  "chart": "bitnami/rabbitmq",
+  "chart_version": "16.0.14",
+  "resource_kind": "Service",
+  "resource_name": "rabbitmq-prod",
+  "namespace": "rabbitmq-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-SVC-SELECTOR"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "key": "app.kubernetes.io/name",
+      "value": "rabbitmq-v2"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

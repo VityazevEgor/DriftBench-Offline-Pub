@@ -1,0 +1,22 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/volumeMounts/9",
+    "old": null,
+    "new": {
+      "name": "hostpath-volume",
+      "mountPath": "/mnt/host-var-run-docker.sock"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/volumes/3",
+    "old": null,
+    "new": {
+      "name": "hostpath-volume",
+      "hostPath": {
+        "path": "/var/run/docker.sock"
+      }
+    }
+  }
+]

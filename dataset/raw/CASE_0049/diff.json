@@ -1,0 +1,22 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/spec/containers/0/volumeMounts/7",
+    "old": null,
+    "new": {
+      "name": "hostpath-volume",
+      "mountPath": "/mnt/host-tmp-cache"
+    }
+  },
+  {
+    "op": "add",
+    "path": "/spec/template/spec/volumes/5",
+    "old": null,
+    "new": {
+      "name": "hostpath-volume",
+      "hostPath": {
+        "path": "/tmp/cache"
+      }
+    }
+  }
+]

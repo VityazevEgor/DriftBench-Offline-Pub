@@ -1,0 +1,14 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/strategy/rollingUpdate",
+    "old": {},
+    "new": null
+  },
+  {
+    "op": "replace",
+    "path": "/spec/strategy/type",
+    "old": "RollingUpdate",
+    "new": "Recreate"
+  }
+]

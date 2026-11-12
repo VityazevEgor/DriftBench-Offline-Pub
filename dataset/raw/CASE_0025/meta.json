@@ -1,0 +1,28 @@
+{
+  "case_id": "CASE_0025",
+  "case_type": "paired",
+  "pair_id": "PAIR_017",
+  "app": "nginx",
+  "chart": "bitnami/nginx",
+  "chart_version": "25.2.5",
+  "resource_kind": "NetworkPolicy",
+  "resource_name": "nginx-prod",
+  "namespace": "nginx-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-NP-ALLOW-ALL"
+  ],
+  "operator_params": [
+    {
+      "param": "ingress",
+      "direction": "ingress"
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

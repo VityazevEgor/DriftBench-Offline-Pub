@@ -1,0 +1,35 @@
+{
+  "case_id": "CASE_0246",
+  "case_type": "compound",
+  "pair_id": null,
+  "app": "nginx",
+  "chart": "bitnami/nginx",
+  "chart_version": "25.2.5",
+  "resource_kind": "Secret",
+  "resource_name": "nginx-prod-tls",
+  "namespace": "nginx-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-META-ANNOT-ADD",
+    "MUT-CFG-SECRET-CHANGE"
+  ],
+  "operator_params": [
+    {
+      "param": "deployment.timestamp",
+      "key": "deployment.timestamp",
+      "value": "2026-10-19T10:00:00Z"
+    },
+    {
+      "param": "default",
+      "key": "tls.key",
+      "value": "UEBzc3cwcmQyMDI2IVNlY3VyMw=="
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

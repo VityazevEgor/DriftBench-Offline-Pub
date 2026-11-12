@@ -1,0 +1,38 @@
+{
+  "case_id": "CASE_0032",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "postgresql",
+  "chart": "bitnami/postgresql",
+  "chart_version": "18.12.14",
+  "resource_kind": "CronJob",
+  "resource_name": "postgresql-prod-pgdumpall",
+  "namespace": "postgresql-prod",
+  "environment": "prod",
+  "mutation_operators": [
+    "MUT-RES-LIMITS"
+  ],
+  "operator_params": [
+    {
+      "param": "x0.25",
+      "container": "postgresql-prod-pgdumpall",
+      "limits": {
+        "cpu": "37m",
+        "ephemeral-storage": "2Gi",
+        "memory": "48Mi"
+      },
+      "requests": {
+        "cpu": "37m",
+        "ephemeral-storage": "50Mi",
+        "memory": "48Mi"
+      }
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

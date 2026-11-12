@@ -1,0 +1,28 @@
+{
+  "case_id": "CASE_0219",
+  "case_type": "paired",
+  "pair_id": "PAIR_032",
+  "app": "rabbitmq",
+  "chart": "bitnami/rabbitmq",
+  "chart_version": "16.0.14",
+  "resource_kind": "RoleBinding",
+  "resource_name": "rabbitmq-dev-endpoint-reader",
+  "namespace": "rabbitmq-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-RBAC-ROLEREF-ADMIN"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "roleRef": "cluster-admin"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "rejected",
+    "message": "The RoleBinding \"rabbitmq-dev-endpoint-reader\" is invalid: roleRef: Invalid value: {\"APIGroup\":\"rbac.authorization.k8s.io\",\"Kind\":\"Role\",\"Name\":\"cluster-admin\"}: field is immutable"
+  }
+}

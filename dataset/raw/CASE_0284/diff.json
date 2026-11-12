@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/image",
+    "old": "quay.io/prometheus/node-exporter:v1.12.1",
+    "new": "quay.io/prometheus/node-exporter:latest"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "case_id": "CASE_0083",
+  "case_type": "single",
+  "pair_id": null,
+  "app": "ingress-nginx",
+  "chart": "ingress-nginx/ingress-nginx",
+  "chart_version": "4.15.1",
+  "resource_kind": "Deployment",
+  "resource_name": "ingress-nginx-dev-controller",
+  "namespace": "ingress-nginx-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-WL-STRATEGY"
+  ],
+  "operator_params": [
+    {
+      "param": "recreate",
+      "type": "Recreate"
+    }
+  ],
+  "operator_split": "seen",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "rejected",
+    "message": "The Deployment \"ingress-nginx-dev-controller\" is invalid: spec.strategy.rollingUpdate: Forbidden: may not be specified when strategy `type` is 'Recreate'"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "nginx": {
+    "name": "nginx",
+    "chart": "bitnami/nginx",
+    "version": "25.2.5",
+    "repo_url": "https://charts.bitnami.com/bitnami",
+    "sha256": "8a8ed5f09fe591ae5d785352a712eea8c4df2550a7d1ef97801ca1540324834c"
+  },
+  "ingress-nginx": {
+    "name": "ingress-nginx",
+    "chart": "ingress-nginx/ingress-nginx",
+    "version": "4.15.1",
+    "repo_url": "https://kubernetes.github.io/ingress-nginx",
+    "sha256": "3eff0bd18151d6e6b1c441463410571443dda1ac78292cb189346628de784f0c"
+  },
+  "postgresql": {
+    "name": "postgresql",
+    "chart": "bitnami/postgresql",
+    "version": "18.12.14",
+    "repo_url": "https://charts.bitnami.com/bitnami",
+    "sha256": "4fc5b42233e94bd321fb3ca4959cc7d3c2d008489a96db0ba3f717a1eacf1ec3"
+  },
+  "redis": {
+    "name": "redis",
+    "chart": "bitnami/redis",
+    "version": "28.3.1",
+    "repo_url": "https://charts.bitnami.com/bitnami",
+    "sha256": "4dacf5a4f67aca6d1565b0bb9fcd0343b22237efd14621cd47c0598f747c1092"
+  },
+  "rabbitmq": {
+    "name": "rabbitmq",
+    "chart": "bitnami/rabbitmq",
+    "version": "16.0.14",
+    "repo_url": "https://charts.bitnami.com/bitnami",
+    "sha256": "df625220cafdfe892e68c1b3f1a5500049acd227fe90b2deca04df13190a176b"
+  },
+  "prometheus-node-exporter": {
+    "name": "prometheus-node-exporter",
+    "chart": "prometheus-community/prometheus-node-exporter",
+    "version": "4.60.0",
+    "repo_url": "https://prometheus-community.github.io/helm-charts",
+    "sha256": "676c47bb898d06265f1b3749e772526162a5a5ec910fcad44959b143ea7ebd2a"
+  },
+  "kube-state-metrics": {
+    "name": "kube-state-metrics",
+    "chart": "prometheus-community/kube-state-metrics",
+    "version": "8.6.0",
+    "repo_url": "https://prometheus-community.github.io/helm-charts",
+    "sha256": "9bdf8485c0df29eb2070bacafbb8a4333a22663fb8049da32ff98ec521576388"
+  }
+}

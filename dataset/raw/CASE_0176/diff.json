@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/data/password",
+    "old": null,
+    "new": "plain-pass-773"
+  }
+]

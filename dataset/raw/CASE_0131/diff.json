@@ -1,0 +1,18 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/pipeline.run~1id",
+    "old": null,
+    "new": "pipe-8242"
+  },
+  {
+    "op": "add",
+    "path": "/subjects/1",
+    "old": null,
+    "new": {
+      "kind": "ServiceAccount",
+      "name": "default",
+      "namespace": "rabbitmq-prod"
+    }
+  }
+]

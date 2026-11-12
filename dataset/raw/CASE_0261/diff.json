@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/template/metadata/annotations/checksum~1config",
+    "old": null,
+    "new": "hash-85252"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/imagePullPolicy",
+    "old": "IfNotPresent",
+    "new": "Never"
+  }
+]

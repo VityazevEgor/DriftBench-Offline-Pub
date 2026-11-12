@@ -1,0 +1,18 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: nginx-dev
+  namespace: nginx-dev
+  labels:
+    app.kubernetes.io/instance: nginx-dev
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/version: 1.31.7
+    helm.sh/chart: nginx-25.2.5
+    environment: dev
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: nginx-dev
+      app.kubernetes.io/name: nginx

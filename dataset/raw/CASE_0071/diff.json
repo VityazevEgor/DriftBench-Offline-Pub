@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/automountServiceAccountToken",
+    "old": false,
+    "new": true
+  }
+]

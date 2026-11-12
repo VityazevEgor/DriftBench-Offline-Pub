@@ -1,0 +1,8 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/jobTemplate/spec/template/spec/automountServiceAccountToken",
+    "old": null,
+    "new": true
+  }
+]

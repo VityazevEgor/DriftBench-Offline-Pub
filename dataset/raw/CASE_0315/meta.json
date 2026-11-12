@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0315",
+  "case_type": "paired",
+  "pair_id": "PAIR_027",
+  "app": "postgresql",
+  "chart": "bitnami/postgresql",
+  "chart_version": "18.12.14",
+  "resource_kind": "ConfigMap",
+  "resource_name": "postgresql-dev-extended-configuration",
+  "namespace": "postgresql-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-CFG-CM-CHANGE"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "key": "override.conf",
+      "value": "primary"
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

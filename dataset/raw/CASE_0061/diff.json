@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/serviceAccountName",
+    "old": "rabbitmq-prod",
+    "new": "default"
+  }
+]

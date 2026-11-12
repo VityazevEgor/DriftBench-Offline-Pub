@@ -1,0 +1,14 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/minAvailable",
+    "old": 1,
+    "new": null
+  },
+  {
+    "op": "add",
+    "path": "/spec/maxUnavailable",
+    "old": null,
+    "new": "100%"
+  }
+]

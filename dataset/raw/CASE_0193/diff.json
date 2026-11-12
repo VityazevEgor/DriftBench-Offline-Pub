@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/env-ticket",
+    "old": null,
+    "new": "TICKET-825"
+  },
+  {
+    "op": "add",
+    "path": "/spec/ingress",
+    "old": null,
+    "new": [
+      {}
+    ]
+  }
+]

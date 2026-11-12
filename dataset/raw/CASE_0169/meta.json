@@ -1,0 +1,29 @@
+{
+  "case_id": "CASE_0169",
+  "case_type": "paired",
+  "pair_id": "PAIR_034",
+  "app": "redis",
+  "chart": "bitnami/redis",
+  "chart_version": "28.3.1",
+  "resource_kind": "ConfigMap",
+  "resource_name": "redis-dev-health",
+  "namespace": "redis-dev",
+  "environment": "dev",
+  "mutation_operators": [
+    "MUT-CFG-CM-CHANGE"
+  ],
+  "operator_params": [
+    {
+      "param": "default",
+      "key": "ping_readiness_local_and_master.sh",
+      "value": "script_dir=\"$(dirname \"$0\")\"\nexit_status=0\n\"$script_dir/ping_readiness_local.sh\" $1 || exit_status=$?\n\"$script_dir/ping_readiness_master.sh\" $1 || exit_status=$?\nexit $exit_status\n# configuration updated"
+    }
+  ],
+  "operator_split": "held_out",
+  "seed": 42,
+  "generator_version": "44030bb054d7636a95d8825e3a6d74d151021c8e",
+  "validation": {
+    "status": "accepted",
+    "message": ""
+  }
+}

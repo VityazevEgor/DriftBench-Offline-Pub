@@ -1,0 +1,34 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/containers/0/livenessProbe",
+    "old": {
+      "failureThreshold": 6,
+      "initialDelaySeconds": 30,
+      "periodSeconds": 10,
+      "successThreshold": 1,
+      "timeoutSeconds": 5,
+      "tcpSocket": {
+        "port": "http"
+      }
+    },
+    "new": null
+  },
+  {
+    "op": "remove",
+    "path": "/spec/template/spec/containers/0/resources",
+    "old": {
+      "limits": {
+        "cpu": "150m",
+        "ephemeral-storage": "2Gi",
+        "memory": "192Mi"
+      },
+      "requests": {
+        "cpu": "100m",
+        "ephemeral-storage": "50Mi",
+        "memory": "128Mi"
+      }
+    },
+    "new": null
+  }
+]

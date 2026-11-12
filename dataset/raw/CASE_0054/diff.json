@@ -1,0 +1,12 @@
+[
+  {
+    "op": "add",
+    "path": "/subjects/1",
+    "old": null,
+    "new": {
+      "kind": "Group",
+      "name": "system:authenticated",
+      "apiGroup": "rbac.authorization.k8s.io"
+    }
+  }
+]

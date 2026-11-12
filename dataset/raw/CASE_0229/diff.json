@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/maxReplicas",
+    "old": 3,
+    "new": 15
+  }
+]

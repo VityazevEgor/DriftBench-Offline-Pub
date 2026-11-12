@@ -1,0 +1,20 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/owner",
+    "old": null,
+    "new": "team-platform"
+  },
+  {
+    "op": "remove",
+    "path": "/spec/minAvailable",
+    "old": 1,
+    "new": null
+  },
+  {
+    "op": "add",
+    "path": "/spec/maxUnavailable",
+    "old": null,
+    "new": "100%"
+  }
+]

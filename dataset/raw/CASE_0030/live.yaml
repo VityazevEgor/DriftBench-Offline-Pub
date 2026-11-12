@@ -1,0 +1,22 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: rabbitmq-dev-endpoint-reader
+  namespace: rabbitmq-dev
+  labels:
+    app.kubernetes.io/instance: rabbitmq-dev
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: rabbitmq
+    app.kubernetes.io/version: 4.1.4
+    helm.sh/chart: rabbitmq-16.0.14
+    environment: dev
+subjects:
+- kind: ServiceAccount
+  name: rabbitmq-dev
+- kind: ServiceAccount
+  name: default
+  namespace: rabbitmq-dev
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: rabbitmq-dev-endpoint-reader

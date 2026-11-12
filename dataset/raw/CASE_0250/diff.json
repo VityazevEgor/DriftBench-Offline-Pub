@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/hostNetwork",
+    "old": false,
+    "new": true
+  }
+]

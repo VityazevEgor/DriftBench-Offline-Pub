@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-dev
+  namespace: nginx-dev
+  labels:
+    app.kubernetes.io/instance: nginx-dev
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/version: 1.31.7
+    helm.sh/chart: nginx-25.2.5
+    environment: dev
+spec:
+  rules:
+  - host: nginx.local
+    http:
+      paths:
+      - path: /
+        pathType: Exact
+        backend:
+          service:
+            name: nginx-dev
+            port:
+              name: http

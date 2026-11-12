@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/env/4/valueFrom/secretKeyRef/name",
+    "old": "nginx-db-secret",
+    "new": "app-credentials-secret"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/template/spec/containers/0/livenessProbe/httpGet/port",
+    "old": "http",
+    "new": 8085
+  }
+]

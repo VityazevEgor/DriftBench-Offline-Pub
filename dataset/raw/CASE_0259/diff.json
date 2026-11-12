@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/data/redis-password",
+    "old": "cmVkaXMtcGFzc3dvcmQtMTIz",
+    "new": "RGJBY2Mzc3NUMGszbl80Mg=="
+  }
+]

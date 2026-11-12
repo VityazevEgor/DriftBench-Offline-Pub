@@ -1,0 +1,11 @@
+[
+  {
+    "op": "add",
+    "path": "/spec/strategy/rollingUpdate",
+    "old": null,
+    "new": {
+      "maxSurge": 0,
+      "maxUnavailable": "25%"
+    }
+  }
+]

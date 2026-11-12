@@ -1,0 +1,24 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/env-ticket",
+    "old": null,
+    "new": "TICKET-381"
+  },
+  {
+    "op": "add",
+    "path": "/spec/ingress/1",
+    "old": null,
+    "new": {
+      "from": [
+        {
+          "podSelector": {
+            "matchLabels": {
+              "app.kubernetes.io/name": "frontend-proxy"
+            }
+          }
+        }
+      ]
+    }
+  }
+]

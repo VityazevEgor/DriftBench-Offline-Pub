@@ -1,0 +1,14 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/pipeline.run~1id",
+    "old": null,
+    "new": "pipe-3308"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/maxUnavailable",
+    "old": 1,
+    "new": "100%"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/roleRef/name",
+    "old": "ingress-nginx-prod",
+    "new": "cluster-admin"
+  }
+]

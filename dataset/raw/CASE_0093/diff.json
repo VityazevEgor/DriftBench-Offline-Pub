@@ -1,0 +1,8 @@
+[
+  {
+    "op": "replace",
+    "path": "/data/override.conf",
+    "old": "max_connections = 100",
+    "new": "primary"
+  }
+]

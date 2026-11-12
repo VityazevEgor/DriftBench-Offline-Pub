@@ -1,0 +1,14 @@
+[
+  {
+    "op": "replace",
+    "path": "/metadata/labels/app.kubernetes.io~1version",
+    "old": "2.20.0",
+    "new": "2.20.1"
+  },
+  {
+    "op": "replace",
+    "path": "/roleRef/name",
+    "old": "kube-state-metrics-dev",
+    "new": "cluster-admin"
+  }
+]
