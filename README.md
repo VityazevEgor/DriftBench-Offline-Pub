@@ -93,6 +93,13 @@ dataset/
   annotation/            # annotation_main.csv, annotation_second.csv, viewer.html
   index.csv              # полный индекс датасета
   REPORT.md              # детальный отчет
+annotated_dataset/       # размеченные таблицы (annotation_main_labeled.csv, annotation_second_labeled.csv)
 requirements.txt
 README.md
 ```
+
+## Лицензия
+
+- **Код генератора** (`driftbench/`, `tests/`, `Makefile` и сопутствующие файлы) распространяется по лицензии [MIT](LICENSE).
+- **Корпус и разметка** (`dataset/`, `annotated_dataset/`) распространяются по лицензии [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). При использовании необходимо указывать авторство.
+- Манифесты в `baseline/` (а также исходные части `desired.yaml` в корпусе) получены рендерингом сторонних Helm-чартов и остаются под лицензиями этих чартов.
